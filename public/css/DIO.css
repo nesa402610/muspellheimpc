@@ -1,0 +1,1033 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+    font-family: "Komi";
+    src: url('/fonts/SingleFile/Komi.ttf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: hsl(0deg 0% 25%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0deg 0% 50%);
+}
+
+
+html {
+    font-family: 'Fira Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    height: 100%;
+}
+
+label a {
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+}
+
+
+button {
+    border: none;
+    width: 100%;
+    line-height: 1.4;
+    background: white;
+    color: black;
+    transition: all .2s;
+    font-size: inherit;
+    font-family: inherit;
+    box-shadow: rgb(0 0 0 / 22%) 0px 3px 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: hsl(30deg 90% 60%);
+    padding: .3rem;
+    line-height: 1.6rem;
+}
+button:hover {
+    filter: brightness(0.8);
+}
+
+button:focus {
+    outline: 3px solid hsl(245deg 75% 60%);
+}
+input {
+    font: inherit;
+    font-size: 1rem;
+    border-radius: 0;
+    border: 0;
+    margin: 2px 0;
+    padding: 0.4rem .8rem;
+    /* background: hsl(355deg 80% 60%); */
+}
+input:focus-visible {
+    outline: none;
+    /* border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-color: hsl(352deg 77% 60%); */
+}
+
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: .07s;
+
+}
+
+a:hover {
+    color: rgb(233, 75, 96);
+    transition: .2sec;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: .5rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: .5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+h5 {
+    font-size: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+.sidequest{
+    /* position: fixed; */
+    /* right: 1rem; */
+    /* width: 20%; */
+    border: solid 3px hsl(30deg 90% 60%);
+    background-color: hsl(0deg 0% 13%);
+    padding: 1rem;
+}
+header {
+    height: 58px;
+    position: fixed;
+    background-color: hsl(0deg 0% 12%);
+    /* backdrop-filter: blur(4px); */
+    width: 100%;
+    top: 0;
+    z-index: 999999999;
+}
+
+header a {
+    display: flex;
+    /* line-height: 2rem; */
+    cursor: pointer;
+    /* float: left; */
+}
+header a.kuree {
+    color: hsl(30deg 90% 60%);
+    text-shadow: -1px -1px 10px hsl(30deg 90% 60% / 38%);
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#size-cutter {
+    margin: auto;
+    width: 1720px;
+}
+#modular {
+    display: flex;
+    justify-content: center;
+}
+#modular > div {
+    width: 40%;
+    height: 3vh;
+    display: flex;
+    background: hsl(30deg 90% 60%);
+    color: black;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 11;
+    margin-top: 2rem;
+    box-shadow: 0 0 20px 0 hsl(0deg 0% 0% / 30%);
+
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+.header_block {
+    display: flex;
+    align-items: center;
+}
+.dropdown {
+    transition: .2s;
+    font-size: 1.2rem;
+    visibility: hidden;
+    position: absolute;
+    border: solid 2px hsl(0deg 0% 50% / 60%);
+    background-color: hsl(0deg 0% 12%);
+    top: 80px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    z-index: 1489;
+}
+#mobile_header-menu .dropdown {
+    right: 0;
+}
+.dropdown.visible {
+    top: 58px;
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown .nav-item {
+    padding: 0 !important;
+    transition: .1s;
+}
+.dropdown .nav-item:hover {
+    background-color: hsl(0deg 0% 45% / 30%);
+
+}
+.dropdown .nav-item:after {
+    content: "";
+    position: absolute;
+    border: solid 1px hsl(0deg 0% 50% / 60%);
+    width: 100%;
+}
+.dropdown a {
+    line-height: 1.5;
+    padding: 0.7rem;
+}
+#mobile_header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+#mobile_header-menu {
+    float: left;
+    font-size: 1.4rem;
+}
+#mobile_header-menu .dropdown .nav-item {
+    padding: .8rem;
+}
+
+
+.nav-item {
+    float: left;
+    padding: .4rem;
+}
+
+.header_block > .nav-item:first-child {
+    padding-left: 0rem;
+}
+
+.header_block > .nav-item:last-child {
+    padding-right: 0rem;
+}
+
+main {
+    margin-top: 58px;
+    flex: 1 0 auto;
+    background: hsl(0deg 0% 10%);
+
+}
+
+
+.banner>div {
+    position: relative;
+}
+
+.banner_images {
+    left: 0;
+    right: 0;
+    min-height: 600px;
+    position: relative;
+}
+
+.banner_image {
+    background-image: url(https://static.razer.ru/168720/Razer-BlackWidow-2019-gallery03.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.scroll {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 4vw;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.scroll-arrow {
+    padding: 2rem;
+}
+
+.scroll-arrow>a:hover {
+    cursor: pointer;
+}
+
+.scroll-selector {
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.scroll-selector ul {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-selector ul li {
+    padding: .5rem;
+}
+
+.scroll-selector ul li a {
+    display: flex;
+    height: 0.3rem;
+    background-color: white;
+    width: 3rem;
+}
+
+.scroll-selector ul li a.baka {
+    background-color: hsl(355, 80%, 60%);
+}
+a.baka {
+        color: hsl(355, 80%, 60%);
+}
+
+.scroll-selector ul li:hover {
+    cursor: pointer;
+}
+
+.scroll-selector ul li:hover>a {
+    cursor: pointer;
+    background-color: rgb(233, 75, 96);
+}
+
+#pc_builds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.filter-selector_row {
+    display: grid;
+    grid-template-columns: repeat(4, 17%);
+    grid-gap: 1rem;
+    justify-content: center;
+}
+.filter-selector_row > div {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px hsl(355deg 80% 60%);
+}
+.filter-selector_row > div > a {
+    text-align: center;
+    display: block;
+    /* align-items: center;
+    justify-content: center;
+    align-content: center; */
+    padding: .4rem;
+}
+.filter-selector_row .kuree {
+    background: hsl(355deg 80% 60% / 20%);
+}
+.build {
+    border: solid 2px hsl(35deg 45% 50% / 50%);
+    background-color: hsl(0deg 0% 7%);
+    /* width: 25%; */
+    height: 16rem;
+    /* margin: .5rem; */
+    padding: 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
+}
+.build:first-child {
+    margin-left: 0;
+}
+/* #card>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+} */
+
+.build > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://hyperpc.ru/images/product/gaming-pc/extreme/hyperpc_premium/main/switch/hyperpc-1000d-1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.build_header, .hardware_title {
+    /* text-align: end; */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.build_content, .hardware_content {
+    position: relative;
+}
+
+.build_footer, .hardware_footer {
+    display: flex;
+    justify-content: space-between;
+}
+.build_footer .price {
+    align-self: center;
+}
+.btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+/* .build_content .image {
+  background-image: url(https://hyperpc.ru/images/product/gaming-pc/extreme/hyperpc_premium/main/switch/hyperpc-1000d-1.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+} */
+
+.hardware {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.hardware>div {
+    margin-left: .5rem;
+}
+
+
+
+.content, .build_content {
+    flex: 1 0 auto;
+}
+
+
+
+.SITENAME>div {
+    padding-left: 0 !important;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+/* #footer>div {
+    display: flex;
+    flex-direction: column;
+} */
+#footer>div>div {
+    padding: .5rem 0;
+}
+
+#cart_empty {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.cart_table {
+    width: 100%;
+}
+.cart_table thead {
+    background: hsl(0deg 0% 13%);
+}
+.cart_table th, .cart_table td {
+    padding: 0.7rem;
+}
+.cart_table tbody tr, .cart_table tfoot tr {
+    border-top: solid 1px hsl(30deg 40% 20%);
+}
+.cart__motto {
+    display: flex;
+    background: hsl(30deg 90% 60%);
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.cart__motto form {
+    display: inline-block;
+}
+.cart_table thead tr th:nth-child(1) {
+    text-align: left;
+}
+.cart_table tbody tr td:nth-child(1) {
+    text-align: left;
+
+}
+.cart_table tbody tr td:nth-child(2) {
+    width: 150px;
+
+}
+.cart_table tbody tr td:nth-child(3) {
+    padding: 0 1rem;
+}
+.cart_table tbody tr td:nth-child(4) {
+    text-align: center;
+}
+.cart_table tbody tr td:nth-child(5) {
+    text-align: center;
+    width: 80px;
+}
+.cart_table tbody tr td:nth-child(6) {
+    text-align: center;
+}
+.cart_summary {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+#confirmation-order-btn {
+
+    background: hsl(30deg 90% 60%);
+
+    transition: .1s;
+
+}
+#confirmation-order-btn a {
+    color: black !important;
+    padding: 0.5rem;
+    display: block;
+}
+
+.empty_alert {
+    background-color: hsl(30deg 90% 60%);
+    padding: 1rem 3rem;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 8px 0px hsl(0deg 0% 0% / 30%);
+}
+
+/* .form_buy {
+    width: 25%;
+} */
+
+.buy-button {
+    border: none;
+    border-radius: 0;
+    padding: 0.2rem 0.5rem;
+    background-color: hsl(30deg 90% 60%);
+    font-size: 1.3rem;
+}
+
+.button {
+    border: none;
+    border-radius: 0;
+    padding: 0.2rem 0.5rem;
+    background-color: hsl(30deg 90% 60%);
+    font-size: 1.3rem;
+}
+
+.flex {
+    display: flex;
+    ;
+}
+
+.title-center {
+    text-align: center;
+}
+
+.products>div>div {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#card img {
+    height: auto;
+    max-width: 100%;
+}
+
+#products {
+    padding: 0 0 3rem;
+}
+
+#products>div>div {
+    padding: 2rem 0 0 0;
+}
+
+/* #products .row {
+    display: flex;
+    text-align: center;
+} */
+
+#card a {
+    display: block;
+}
+
+#order-buy-delivery {
+    display: flex;
+    justify-content: center;
+}
+
+.TEST-CHANGE-ME {
+    height: 80px;
+    width: 320px;
+    background-color: black;
+    transform: skew(-20deg, 0deg);
+}
+
+.TEST-CHANGE-ME span {
+    transform: skew(20deg, 0deg);
+    display: block;
+}
+
+#card {
+    border: solid 2px hsl(35deg 45% 50% / 50%);
+    background-color: hsl(0deg 0% 7%);
+    /* min-height: 16rem; */
+    padding: 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
+}
+
+.card_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_footer {
+    padding: 0.5rem 0 0 0;
+}
+
+
+.row {
+    display: flex;
+    grid-gap: 1rem;
+}
+.grid_row {
+    display: grid;
+    flex: 1 0 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.grid_row #card {
+    margin: 0;
+    /* width: 14rem; */
+    min-height: 14rem;
+}
+
+a.create_build {
+    text-align: center;
+    color: black;
+    /* width: 25%; */
+    background: hsl(355, 80%, 60%);
+    padding: 0.2rem 0.5rem;
+    line-height: 1.4;
+    transition: .1s;
+}
+
+a.create_build:hover {
+    text-align: center;
+    background: hsl(355, 80%, 80%);
+}
+
+
+
+
+
+
+
+.showroom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 38rem;
+    position: relative;
+    border-bottom: solid 2px hsl(30deg 90% 60%);
+}
+.showroom .img {
+    display: flex;
+    gap: 2rem;
+}
+.showroom .img img {
+    height: 510px;
+}
+
+
+.hardwaresInBuild {
+    padding: 1rem 0;
+}
+
+/* .hardwaresInBuild .card_header img {
+    height: 10rem !important;
+} */
+.hardwaresInBuild .card_content {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#paginator {
+    display: flex;
+    justify-content: center;
+}
+
+.hardware_content{
+    flex: 1 0 auto;
+}
+.hardware_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form_center {
+    display: flex;
+    justify-content: center;
+}
+.card {
+    border: solid 2px hsl(35deg 45% 50% / 50%);
+    background-color: hsl(0deg 0% 7%);
+    padding: 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
+}
+
+.contentaside {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    /* justify-content: space-between; */
+    gap: 1rem;
+}
+
+
+.blockOfChoose {
+    display: flex;
+    /* text-align: center;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%); */
+    /* padding: 1rem; */
+    gap: 1rem;
+    /* border: solid 2px hsl(30deg 90% 60%); */
+}
+.infoblock{
+    display: none;
+    padding-top: 3rem;
+}
+.infoblock.mitsuketa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infoblock .header {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+}
+.infoblock.body {
+    display: flex;
+    gap: 1rem;
+}
+/* .infoblock::before{
+    content: "";
+    position: absolute;
+    border-top: solid 2px hsl(355deg 80% 60%);
+    left: 0;
+    z-index: 11111;
+    width: 100%;
+
+} */
+.block-fixed {
+    border: solid 2px hsl(355deg 80% 60% / 46%);
+    padding: 1rem;
+    background: hsl(0deg 0% 15%);
+    text-align: left;
+    width: 100%;
+    min-height: 10rem;
+    cursor: pointer;
+    color: white !important;
+    transition: .15s;
+}
+.block-fixed h4 {
+    font-size: 2rem;
+}
+.block-auto {
+    border: solid 2px hsl(355deg 80% 60% / 46%);
+    padding: 1rem;
+    background: hsl(0deg 0% 15%);
+    text-align: center;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: .15s;
+    width: 100%;
+}
+.block-auto:hover, .block-fixed:hover, #confirmation-order-btn:hover {
+    filter: brightness(1.2);
+
+}
+.block-auto.mitsuketa, .block-fixed.mitsuketa {
+    box-shadow: inset 0px -30px 60px -17px rgb(56 56 56);
+
+}
+
+.infoblock-info {
+    display: none;
+}
+.infoblock-info div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.infoblock-info.mitsuketa {
+    display: block;
+}
+
+
+
+
+form#login .card {
+    padding: 0;
+    height: 30rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 4px rgb(233 75 96);
+}
+
+form#login .login_title {
+    padding: 1rem;
+    text-align: center;
+}
+form#login .login_title h3 {
+    margin-bottom: 0;
+}
+form#login .login, form#login .password, form#login .password-confirm, form#login .name, form#login .phone {
+    display: flex;
+    flex-direction: column;
+}
+form#login .login_fields label, form#login .login_fields a {
+    padding: 0 .8rem ;
+}
+form#login .password .signs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form#login .password .signs a {
+    font-size: 0.9rem;
+    color: hsl(0deg 0% 54%);
+    font-style: italic;
+}
+form#login .action_login {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    align-items: center;
+}
+form#login .action_register {
+    display: flex;
+    margin-top: 2px;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+}
+form#login .action_register .register_btn {
+    width: 100%;
+}
+form#login .center_button {
+    display: flex;
+    justify-content: center;
+}
+form#login .register, form#login .to_login  {
+    background: rgb(233 75 96);
+    transition: .2s;
+
+}
+form#login .register a, form#login .to_login a {
+    padding: .3rem;
+    display: block;
+}
+form#login .register:hover, form#login .to_login:hover {
+    background: hsl(340deg 80% 55%);
+}
+form#login .register:hover a, form#login .to_login:hover  a{
+    color: white;
+}
+
+form#login .login_footer {
+    display: flex;
+    flex: 1 0 0;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    color: hsl(0deg 0% 40%);
+    padding: 0 3rem 1rem;
+    text-transform: lowercase;
+    text-align: justify;
+}
+
+
+
+.userprofile_data {
+    gap: 2rem;
+    display: flex;
+}
+.userprofile_data > div {
+    width: 100%;
+}
+.userinfo, .userorders {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px rgb(233 75 96);
+    padding: 1rem;
+}
+.userinfo input {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    background: hsl(355deg 80% 60%);
+    box-shadow: 2px 2px 0px hsl(200deg 75% 60%);
+}
+.userinfo button {
+    background: hsl(30deg 90% 60%);
+    padding: 0.2rem 0.6rem;
+    margin-top: 0.5rem;
+
+}
+.userinfo .submit {
+    justify-content: flex-end;
+}
+
+.userinfo .userinfo_fields > div {
+    display: flex;
+    align-items: center;
+
+}
+.userinfo .userinfo_fields span {
+    margin-right: .5rem;
+}
+
+aside .filter > div {
+    margin-bottom: .5rem;
+}
+aside ul li a {
+    color: hsl(0deg 0% 85%);
+}
+
+
+
+.inline_together {
+    display: flex;
+    padding: 4rem 0px;
+    justify-content: center;
+}
+.inline_together > div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+.final_click {
+    justify-self: flex-end;
+}
+.final_click > form {
+    display: flex;
+    flex-direction: column;
+}
+.Wcart {
+    border-left: dashed 2px;
+
+}
+.Wcart-details {
+    width: 100%;
+    height: 100%;
+}
+.Wcart-details > table {
+    width: 100%;
+}
+
+.Wcart-head, .Wcart-item {
+    text-align: center;
+}
+
+.Wcart-item > div, .Wcart-head > span {
+    border-right: solid 1px;
+}
+.Wcart-item > tr > td{
+    padding-top: .4rem;
+}
+
+.Wcart-summary {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
