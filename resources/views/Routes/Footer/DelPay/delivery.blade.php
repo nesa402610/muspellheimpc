@@ -13,7 +13,12 @@
     <div class="body">
         <div data-id="baka" class="infoblock-info mitsuketa">
             <div>
-                <span>Стоимость доставки в пределах МКАД стоит: 350 рублей</span>
+                <span>
+                    Доставка компьютеров беслатная
+                </span>
+                <span>
+                    Доставка комплектующих стоит 350 рублей
+                </span>
             </div>
         </div>
         <div data-id="bakayaro" class="infoblock-info">
