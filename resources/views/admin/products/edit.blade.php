@@ -14,8 +14,8 @@
         <th>Категория</th>
         <th>Бренд</th>
         <th>Количество</th>
-        <th>Код</th>
-        <th>Глобальная категория</th>
+        {{-- <th>Код</th> --}}
+        {{-- <th>Глобальная категория</th> --}}
         <th>Видимость</th>
         <th>Дата создания</th>
         <th>Дата обновления</th>
@@ -50,12 +50,12 @@
         <th>
             <input name="quantity" type="number" placeholder="Количество" value="{{ $product->quantity }}">
         </th>
-        <th>
+        {{-- <th>
             <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
-        </th>
-        <th>
+        </th> --}}
+        {{-- <th>
             <input type="text" name="global_category" placeholder="Глобальная категория" value="{{ $product->Global_category }}">
-        </th>
+        </th> --}}
         <th>
             <input type="text" name="visibility" placeholder="Видимость" value="{{ $product->visibility }}">
         </th>
