@@ -16,7 +16,7 @@
         <th>Дата релиза</th>
         <th>Видимость</th>
         <th>Вид компа</th>
-        <th>комплектующие</th>
+        {{-- <th>комплектующие</th> --}}
     </tr>
 @endsection
 
@@ -52,12 +52,13 @@
             </select>
         </th>
         {{-- <th><input name="global_category" type="text" placeholder="g_cat" value="{{ $build->product->global_category }}"></th> --}}
-        <th>
+        {{-- <th>
             <select name="hardware[]" multiple>
                 @foreach ($hardwares as $hardware)
                     <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
                 @endforeach
             </select>
-        </th>
+        </th> --}}
+
     </tr>
 @endsection
