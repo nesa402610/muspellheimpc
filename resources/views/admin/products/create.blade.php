@@ -58,8 +58,8 @@
         </th>
         <th>
             <select required name="g_cat">
-                <option value="2">hardware</option>
-                <option value="3">accessory</option>
+                <option value="2">Комплектующие</option>
+                <option value="3">Периферия</option>
             </select>
         </th>
         <th>

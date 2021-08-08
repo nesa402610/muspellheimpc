@@ -129,6 +129,10 @@ class productController extends Controller
      */
     public function update(Request $request, product $product)
     {
+
+        $ext = $request->file('image')->extension();
+        $request->file('image')->storeAs('products_img', $request->input('name') . '_image'. '.' . $ext, 'public');
+
         $product->name = $request->input('name');
         $product->slug = str::slug($request->input('name'));
         $product->description = $request->input('description');
@@ -136,6 +140,7 @@ class productController extends Controller
         $product->category_id = $request->input('category');
         $product->brand_id = $request->input('brand');
         $product->quantity = $request->input('quantity');
+        $product->image = $request->input('name') . '_image' . '.' . $ext;
         // $product->code = $request->input('code');
         $product->global_category = $request->input('g_cat');
         $product->visibility = $request->input('visibility');

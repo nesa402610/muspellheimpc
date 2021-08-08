@@ -414,7 +414,7 @@ a.baka {
 }
 
 .build_header, .hardware_title {
-    /* text-align: end; */
+    text-align: center;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -426,6 +426,7 @@ a.baka {
 .build_footer, .hardware_footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .build_footer .price {
     align-self: center;
@@ -567,7 +568,7 @@ a.baka {
     border-radius: 0;
     padding: 0.2rem 0.5rem;
     background-color: hsl(30deg 90% 60%);
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
 }
 
 .button {
@@ -595,8 +596,8 @@ a.baka {
 }
 
 #card img {
-    height: auto;
-    max-width: 100%;
+    height: 125px;
+    width: 125px;
 }
 
 #products {
@@ -638,7 +639,7 @@ a.baka {
     background-color: hsl(0deg 0% 7%);
     /* min-height: 16rem; */
     padding: 1rem;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
 }
 
@@ -660,13 +661,13 @@ a.baka {
 .grid_row {
     display: grid;
     flex: 1 0 0;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
 }
 .grid_row #card {
     margin: 0;
     /* width: 14rem; */
-    min-height: 14rem;
+    /* min-height: 14rem; */
 }
 
 a.create_build {
@@ -694,7 +695,7 @@ a.create_build:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 38rem;
+    padding: 1rem;
     position: relative;
     border-bottom: solid 2px hsl(30deg 90% 60%);
 }
@@ -703,7 +704,7 @@ a.create_build:hover {
     gap: 2rem;
 }
 .showroom .img img {
-    height: 510px;
+    height: 310px;
 }
 
 
@@ -738,7 +739,11 @@ a.create_build:hover {
 }
 
 .hardware_content{
+    display: flex;
     flex: 1 0 auto;
+    justify-content: center;
+    padding: 1rem 0;
+
 }
 .hardware_footer{
     display: flex;

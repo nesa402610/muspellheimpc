@@ -14,7 +14,7 @@
         <th>Категория</th>
         <th>Бренд</th>
         <th>Количество</th>
-        {{-- <th>Код</th> --}}
+        <th>Изображение</th>
         <th>Куда</th>
         <th>Видимость</th>
         <th>Дата создания</th>
@@ -50,13 +50,16 @@
         <th>
             <input name="quantity" type="number" placeholder="Количество" value="{{ $product->quantity }}">
         </th>
+        <th>
+            <input required name="image" type="file" placeholder="image" value="0">
+        </th>
         {{-- <th>
             <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
         </th> --}}
         <th>
             <select required name="g_cat">
-                <option value="2">hardware</option>
-                <option value="3">accessory</option>
+                <option value="2">Комплектующие</option>
+                <option value="3">Периферия</option>
             </select>
         </th>
         <th>
