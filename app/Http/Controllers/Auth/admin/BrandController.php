@@ -91,8 +91,8 @@ class BrandController extends Controller
         $request->file('image')->storeAs('brand_img', str::slug($request->input('name')) . '_image'. '.' . $ext, 'public');
 
         $brand->name = $request->input('name');
-        $store->slug = str::slug($request->input('name'));
-        $store->image = str::slug($request->input('name')) . '_image' . '.' . $ext;
+        $brand->slug = str::slug($request->input('name'));
+        $brand->image = str::slug($request->input('name')) . '_image' . '.' . $ext;
         $brand->save();
 
         return redirect()->route('brands.index');

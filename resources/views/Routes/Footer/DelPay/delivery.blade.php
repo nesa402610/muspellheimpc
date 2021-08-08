@@ -12,14 +12,20 @@
     </div>
     <div class="body">
         <div data-id="baka" class="infoblock-info mitsuketa">
-            <div>
-                <span>
-                    Доставка компьютеров беслатная
-                </span>
-                <span>
-                    Доставка комплектующих стоит 350 рублей
-                </span>
+            <div class="price uline">
+                <h2>Стоимость доставки</h2>
+                <div>
+                    Бесплатно для компов и 350 для железа
+                </div>
             </div>
+            <div class="timing uline">
+                <h2>Интервалы доставки</h2>
+                <div>
+                    Доставка с 10 до 22
+                </div>
+            </div>
+
+
         </div>
         <div data-id="bakayaro" class="infoblock-info">
             <div>

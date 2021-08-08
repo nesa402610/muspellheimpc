@@ -84,7 +84,7 @@ class productController extends Controller
             $ass->product_id = $product->id;
             $ass->category_id = $product->category_id;
             $ass->brand_id = $product->brand_id;
-            $pass->visibility = $request->input('visibility');
+            $ass->visibility = $request->input('visibility');
             $ass->save();
         }
 
@@ -137,10 +137,11 @@ class productController extends Controller
         $product->brand_id = $request->input('brand');
         $product->quantity = $request->input('quantity');
         // $product->code = $request->input('code');
-        $product->global_category = $request->input('global_category');
+        $product->global_category = $request->input('g_cat');
         $product->visibility = $request->input('visibility');
 
         $product->save();
+
 
 
 

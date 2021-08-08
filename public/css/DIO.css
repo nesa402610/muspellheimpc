@@ -784,12 +784,11 @@ a.create_build:hover {
 .infoblock.mitsuketa {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .infoblock .header {
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    width: 80%;
 }
 .infoblock.body {
     display: flex;
@@ -826,7 +825,7 @@ a.create_build:hover {
     cursor: pointer;
     font-size: 2rem;
     transition: .15s;
-    width: 100%;
+    width: 35%;
 }
 .block-auto:hover, .block-fixed:hover, #confirmation-order-btn:hover {
     filter: brightness(1.2);
@@ -839,6 +838,16 @@ a.create_build:hover {
 
 .infoblock-info {
     display: none;
+}
+.infoblock-info .uline h2 {
+    text-align: center;
+}
+.infoblock-info .uline h2::after {
+    content: "";
+    background: hsl(30deg 90% 60%);
+    display: block;
+    height: 2px;
+    margin-top: 1rem;
 }
 .infoblock-info div {
     display: flex;

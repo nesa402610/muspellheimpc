@@ -15,7 +15,7 @@
         <th>Бренд</th>
         <th>Количество</th>
         {{-- <th>Код</th> --}}
-        {{-- <th>Глобальная категория</th> --}}
+        <th>Куда</th>
         <th>Видимость</th>
         <th>Дата создания</th>
         <th>Дата обновления</th>
@@ -53,9 +53,12 @@
         {{-- <th>
             <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
         </th> --}}
-        {{-- <th>
-            <input type="text" name="global_category" placeholder="Глобальная категория" value="{{ $product->Global_category }}">
-        </th> --}}
+        <th>
+            <select required name="g_cat">
+                <option value="2">hardware</option>
+                <option value="3">accessory</option>
+            </select>
+        </th>
         <th>
             <input type="text" name="visibility" placeholder="Видимость" value="{{ $product->visibility }}">
         </th>
