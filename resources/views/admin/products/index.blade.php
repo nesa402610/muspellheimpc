@@ -16,6 +16,7 @@
                 <th>Категория</th>
                 <th>Бренд</th>
                 <th>Действия</th>
+                <th>Quick action</th>
             </tr>
         </thead>
         <tbody>
@@ -51,7 +52,14 @@
                             </form>
                         </div>
                     </th>
-                    <th></th>
+                    <th>
+                        <form action="{{ route('products.vis_change', $product->id) }}" method="POST">
+                            @csrf
+                            <button class="submit" >
+                                Изменнить видимость
+                            </button>
+                        </form>
+                    </th>
                 </tr>
             @endforeach
         </tbody>

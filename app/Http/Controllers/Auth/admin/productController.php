@@ -162,4 +162,16 @@ class productController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    public function vis_change(product $product)
+    {
+        if ($product->visibility === 0) {
+            $product->visibility = 1;
+        } else {
+            $product->visibility = 0;
+        }
+        $product->save();
+
+        return redirect()->back();
+    }
 }

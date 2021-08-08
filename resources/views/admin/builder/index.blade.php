@@ -54,11 +54,11 @@
                                 </form>
                             @endif
                             <a href="{{ route('pcbuilders.edit', $pc_build->id) }}">
-                                <button type="submit" class="button hide-btn" name="button">edit</button>
+                                <button type="submit" class="button" name="button">edit</button>
                             </a>
                             <form action="{{ route('pcbuilders.destroy', $pc_build->id) }}" method="post">
                                 @CSRF
-                                <button type="submit" class="button delete-btn" name="button"
+                                <button type="submit" class="button" name="button"
                                     style="    background-color: hsl(10deg 90% 60%);">Удалить</button>
                             </form>
                         </div>

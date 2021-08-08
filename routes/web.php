@@ -57,6 +57,7 @@ Route::group([
     Route::post('/order_processing_end/{id}', 'PageController@endProccessing')->name('admin.endProcessing');
 
     Route::resource('products', 'productController');
+    Route::post('products/{product}/vis_change', 'productController@vis_change')->name('products.vis_change');
     Route::resource('categories', 'CategoryController');
     Route::resource('brands', 'BrandController');
     Route::resource('hardwares', 'HardwareController');
