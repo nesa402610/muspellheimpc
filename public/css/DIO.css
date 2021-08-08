@@ -106,7 +106,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     margin-bottom: .5rem;
 }
 
@@ -596,8 +596,8 @@ a.baka {
 }
 
 #card img {
-    height: 125px;
-    width: 125px;
+    height: auto;
+    width: 100%;
 }
 
 #products {
@@ -814,7 +814,7 @@ a.create_build:hover {
     background: hsl(0deg 0% 15%);
     text-align: left;
     width: 100%;
-    min-height: 10rem;
+    height: 8rem;
     cursor: pointer;
     color: white !important;
     transition: .15s;
@@ -824,11 +824,11 @@ a.create_build:hover {
 }
 .block-auto {
     border: solid 2px hsl(355deg 80% 60% / 46%);
-    padding: 1rem;
+    padding: 0.5rem;
     background: hsl(0deg 0% 15%);
     text-align: center;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: .15s;
     width: 35%;
 }

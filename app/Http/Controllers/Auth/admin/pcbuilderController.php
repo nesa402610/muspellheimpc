@@ -59,9 +59,9 @@ class pcbuilderController extends Controller
         $storeP->image = $storeP->slug . '_pcbuild' . '.' . $ext;
         $storeP->realese_date = $request->input('realese_date');
         $storeP->visibility = $request->input('visibility');
-        $storeP->global_category = $request->input('global_category');
-        $storeP->category_id = 1;
-        $storeP->brand_id = 1;
+        $storeP->global_category = 1;
+        $storeP->category_id = 2;
+        $storeP->brand_id = 2;
         $storeP->save();
         $request->file('image')->storeAs('products_img', $storeP->slug . '_pcbuild'. '.' . $ext, 'public');
 
@@ -73,8 +73,16 @@ class pcbuilderController extends Controller
         $store->save();
 
         $build = pc_build::find($store->id);
-        $build->hardwares()->attach($request->input('hardware'));
 
+        foreach ($request->input('hardware') as $unit => $value) {
+            if ($value != 0) {
+                $build->hardwares()->attach($value);
+                // dump($value);
+            }
+        }
+
+
+        // $build->hardwares()->attach($request->input('hardware'));
         // $HW = new hardware($request->input('hardware'));
         // $build = pc_build::find($store)->hardwares()->saveMany($HW);
         // hardware::create($request->input('hardware'))->pc_builds()->attach($store->id);

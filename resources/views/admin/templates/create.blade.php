@@ -23,4 +23,5 @@
         </table>
         <button type="submit">Создать</button>
     </form>
+    @yield('add')
 @endsection
