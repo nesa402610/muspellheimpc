@@ -101,26 +101,26 @@ a:hover {
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: .5rem;
-}
-
-h2 {
     font-size: 2rem;
     margin-bottom: .5rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
 h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin-bottom: .5rem;
 }
 
 h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: .5rem;
 }
 h5 {
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 ul {
@@ -474,6 +474,9 @@ a.baka {
     justify-content: space-between;
     padding: 1rem;
 }
+#footer .Company h1 {
+    font-size: 1.6rem;
+}
 /* #footer>div {
     display: flex;
     flex-direction: column;
@@ -787,7 +790,7 @@ a.create_build:hover {
 }
 .infoblock{
     display: none;
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 .infoblock.mitsuketa {
     display: flex;
@@ -847,10 +850,10 @@ a.create_build:hover {
 .infoblock-info {
     display: none;
 }
-.infoblock-info .uline h2 {
+.infoblock-info .uline {
     text-align: center;
 }
-.infoblock-info .uline h2::after {
+.infoblock-info .uline::after {
     content: "";
     background: hsl(30deg 90% 60%);
     display: block;

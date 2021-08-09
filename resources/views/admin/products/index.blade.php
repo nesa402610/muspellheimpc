@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Номер</th>
+                {{-- <th>ID</th> --}}
                 <th>Имя</th>
                 <th>Цена</th>
                 <th>Количество</th>
@@ -30,8 +31,11 @@
                     class="admin_product_visible"
                 @endif>
                     <th>
-                        {{ $product->id }}
+                        {{ $loop->iteration }}
                     </th>
+                    {{-- <th>
+                        {{ $product->id }}
+                    </th> --}}
                     <th>
                         {{ $product->name }}
                     </th>

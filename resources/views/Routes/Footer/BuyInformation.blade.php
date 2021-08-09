@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="size-cutter">
-        <h3 style="text-align: center;">Доставка и оплата товара</h3>
+        <h1 style="text-align: center;">Доставка и оплата товара</h1>
         <div class="blockOfChoose">
             <div data-id="1" class="block-fixed mitsuketa">
                 <h4>Доставка</h4>

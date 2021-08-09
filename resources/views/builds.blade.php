@@ -16,6 +16,9 @@
 </style>
 @section('content')
     <div id="size-cutter">
+        <div class="title-center">
+            <h1>Готовые компьютеры</h1>
+        </div>
         <div class="filter-selector_row">
             <div>
                 <a href="{{ route('buildsTier', 'middle') }}">Средний уровень</a>
@@ -31,9 +34,6 @@
             </div>
         </div>
         <div>
-            <div class="title-center">
-                <h2>Готовые компьютеры</h2>
-            </div>
             <div class="grid_row">
                 @foreach ($builds as $build)
                     <div id="card" class="buying_card">

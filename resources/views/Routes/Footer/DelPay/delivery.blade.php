@@ -12,14 +12,14 @@
     </div>
     <div class="body">
         <div data-id="baka" class="infoblock-info mitsuketa">
-            <div class="price uline">
-                <h2>Стоимость доставки</h2>
+            <div class="price">
+                <h2 class="uline">Стоимость доставки</h2>
                 <div>
                     Бесплатно для компов и 350 для железа
                 </div>
             </div>
-            <div class="timing uline">
-                <h2>Интервалы доставки</h2>
+            <div class="timing">
+                <h2 class="uline">Интервалы доставки</h2>
                 <div>
                     Доставка с 10 до 22
                 </div>

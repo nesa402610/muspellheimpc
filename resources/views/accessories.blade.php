@@ -7,7 +7,7 @@
 @section('content')
     <div id="size-cutter">
         <div class="title-center">
-            <h2>Периферия</h2>
+            <h1>Периферия</h1>
         </div>
         <div class="grid_row" style="grid-template-columns: repeat(7, 1fr)">
             @foreach ($accessories as $accessory)

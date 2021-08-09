@@ -18,12 +18,14 @@ class AdminCheck
      */
     public function handle(Request $request, Closure $next)
     {
-
-        $user = Auth::user();
-        if (!$user->isAdmin()) {
-            session()->flash('AccessErr', 'Недостаточно прав для этого');
-            return redirect('/');
+        if (auth::check()) {
+            $user = Auth::user();
+            if (!$user->isAdmin()) {
+                return abort(404);
+            }
+             return $next($request);
         }
-        return $next($request);
+        return abort(404);
+
     }
 }

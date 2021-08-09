@@ -19,7 +19,7 @@
     <div id="hardwares">
         <div id="size-cutter">
             <div class="title-center">
-                <h2>Комплектующие</h2>
+                <h1>Комплектующие</h1>
             </div>
             <div class="contentaside">
                 <div class="grid_row">

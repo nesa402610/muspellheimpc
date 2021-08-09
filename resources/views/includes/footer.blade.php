@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="Company">
-                <h3>MuspellheimPC</h3>
+                <h1>MuspellheimPC</h1>
                 <div>
                     <a href="{{ route('about') }}">О нас</a>
                 </div>

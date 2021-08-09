@@ -47,8 +47,8 @@ Route::prefix('cart')->group(function () {
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Auth\admin',
-    'middleware' => 'admincheck',
-    'middleware' => 'auth'
+    'middleware' => 'auth',
+    'middleware' => 'admincheck'
 
 ], function () {
     Route::get('/home', 'PageController@home')->name('admin.home');
