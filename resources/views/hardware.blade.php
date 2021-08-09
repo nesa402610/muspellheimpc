@@ -25,7 +25,7 @@
                 <div class="grid_row">
                     @foreach ($hardwares as $hardware)
                         @if ($hardware->product->visibility == 1)
-                            <div id="card">
+                            <div id="card" class="buying_card">
                                 <div astyle="background-image: url('/storage/products_img/{{ $hardware->product->image }}') ">
                                     <div class="hardware_title">
                                         <a

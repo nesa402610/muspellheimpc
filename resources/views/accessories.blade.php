@@ -12,7 +12,7 @@
         <div class="grid_row" style="grid-template-columns: repeat(7, 1fr)">
             @foreach ($accessories as $accessory)
                 @if ($accessory->product->visibility == 1)
-                    <div id="card">
+                    <div id="card" class="buying_card">
                         <div>
                             <div class="hardware_title">
                                 <a

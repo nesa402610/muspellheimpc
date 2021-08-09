@@ -36,7 +36,7 @@
             </div>
             <div class="grid_row">
                 @foreach ($builds as $build)
-                    <div id="card">
+                    <div id="card" class="buying_card">
                         <div style="background-image: url('/storage/products_img/{{ $build->product->image }}')">
                             <div class="build_header">
                                 <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
