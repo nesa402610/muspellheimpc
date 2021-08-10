@@ -21,6 +21,7 @@ $(document).ready(function () {
     });
 });
 
+//Дроплаун меню для меню
 $('#header a.username').click(function (e) {
     e.preventDefault();
     if (!$('#header .dropdown').hasClass('visible')) {
@@ -29,7 +30,7 @@ $('#header a.username').click(function (e) {
         $('#header .dropdown').removeClass('visible');
     }
 });
-
+//Дроплаун меню для меню на мобилке
 $('#mobile_header-menu a.menu').click(function (e) {
     e.preventDefault();
     if (!$(' .dropdown').hasClass('visible')) {
@@ -40,7 +41,7 @@ $('#mobile_header-menu a.menu').click(function (e) {
 });
 
 
-
+//Переключение классов на доставке, оплате
 $('.infoblock .block-auto').click(function (e) {
     e.preventDefault();
     let t = $(this), id = t.attr('data-id');
@@ -58,4 +59,12 @@ $('.blockOfChoose .block-fixed').click(function (e) {
     $('.infoblock[data-id=' + id +'], .blockOfChoose .block-fixed[data-id=' + id +']').addClass('mitsuketa');
 });
 
+
+//Скрытие родительского элемента по клику
+$('#modular a').click(function (e) {
+    e.preventDefault();
+    $('.cart_item-added').fadeOut('fast', function () {
+        $('#modular').remove();
+    });
+});
 

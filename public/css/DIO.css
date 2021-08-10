@@ -139,6 +139,24 @@ ul {
     background-color: hsl(0deg 0% 13%);
     padding: 1rem;
 }
+.clickme {
+    cursor: pointer;
+}
+.flex {
+    display: flex;
+}
+.fx-btn {
+    position: fixed;
+    font-size: 2rem;
+}
+.rba {
+    right: 0;
+    bottom: 0;
+    margin: 0 80px 261px 0;
+}
+.bold {
+    font-weight: bold;
+}
 header {
     height: 58px;
     position: fixed;
@@ -174,19 +192,31 @@ header a.kuree {
     justify-content: center;
 }
 #modular > div {
-    width: 40%;
-    height: 3vh;
     display: flex;
-    background: hsl(30deg 90% 60%);
-    color: black;
     font-size: 1.2rem;
-    justify-content: center;
+    color: black;
+    padding: 0.5rem 0rem;
     align-items: center;
     position: absolute;
-    z-index: 11;
     margin-top: 2rem;
+    width: 40%;
+    background: hsl(30deg 90% 60%);
     box-shadow: 0 0 20px 0 hsl(0deg 0% 0% / 30%);
+    z-index: 11;
+}
 
+.cart_item-added {
+    flex-direction: column;
+    justify-content: space-between !important;
+}
+.cart_item-added .select {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    width: 80%;
+}
+.cart_item-added a {
+    color: black;
 }
 #header {
     display: flex;
@@ -541,6 +571,7 @@ a.baka {
     text-transform: uppercase;
     font-weight: 500;
 }
+
 #confirmation-order-btn {
 
     background: hsl(30deg 90% 60%);
@@ -571,6 +602,8 @@ a.baka {
     border-radius: 0;
     padding: 0.2rem 0.5rem;
     background-color: hsl(30deg 90% 60%);
+    color: black;
+    line-height: 1.6rem;
     /* font-size: 1.3rem; */
 }
 
@@ -584,7 +617,13 @@ a.baka {
 
 .flex {
     display: flex;
-    ;
+}
+.Vflex{
+    display: flex;
+    flex-direction: column;
+}
+.gapA {
+    gap: 1rem;
 }
 
 .title-center {
@@ -694,10 +733,11 @@ a.create_build:hover {
 
 
 
+#product_preview {
+    padding: 1rem 0;
+}
 
-
-
-.showroom {
+#product_preview .showroom {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -705,14 +745,22 @@ a.create_build:hover {
     position: relative;
     border-bottom: solid 2px hsl(30deg 90% 60%);
 }
-.showroom .img {
+#product_preview .showroom .img {
     display: flex;
     gap: 2rem;
 }
-.showroom .img img {
+#product_preview .showroom .img img {
     height: 310px;
 }
+#product_preview .title {
+    margin-top: 1rem;
+}
+#product_preview .main {
+    margin-bottom: 1rem;
+}
+.preview_buy-btn {
 
+}
 
 .hardwaresInBuild {
     padding: 1rem 0;

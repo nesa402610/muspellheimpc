@@ -82,7 +82,8 @@ class cartController extends Controller
             $cart->user_id = Auth::id();
             $cart->save();
         }
-        return redirect('cart');
+        // return redirect()->back()->with('cart.item.added');
+        return redirect()->back()->with('cart.item.added', '');
     }
 
     public function minus($id)

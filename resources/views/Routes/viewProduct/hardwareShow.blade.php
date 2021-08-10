@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="size-cutter">
-        <div id="build">
+        <div id="product_preview">
             <div class="showroom">
                 <div class="img">
                     <img src="/storage/products_img/{{ $hardware->product->image }}" alt="">
@@ -40,30 +40,25 @@
                     </div>
                 </div> --}}
             </div>
-
-            <h1>{{ $hardware->product->name }}</h1>
-            <div основной блок с описанием, картинками и прочим>
-                {{ $hardware->product->description }}
-            </div>
-            <div class="hardwares">
-                <div class="grid_row">
-                    {{-- @foreach ($build_hardwares as $hardware)
-                    <div id="card">
-                        <div class="hardware_image">
-                            <img src="" alt="">
-                            <h4>{{ $hardware->product->name }}</h4>
-                        </div>
-
-                    </div>
-                    @endforeach --}}
-
+            <div class="content">
+                <div class="title">
+                    <h1>{{ $hardware->product->name }}</h1>
+                </div>
+                <div class="main">
+                    {{ $hardware->product->description }}
                 </div>
             </div>
-            <h1>{{ $hardware->product->price }}</h1>
-
+            <div class="footer flex">
+                <div class="Vflex gapA">
+                    <div class="buy-button">
+                        {{ $hardware->product->price }} рублей
+                    </div>
+                    <form class="form_buy" action="{{ route('cart.add', ['id' => $hardware->product->id]) }}"
+                        method="post">
+                        @CSRF
+                        <button type="submit" class="buy-button" name="button">В корзину</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-
-
-    </div>
-@endsection
+    @endsection

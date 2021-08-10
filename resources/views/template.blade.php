@@ -15,19 +15,7 @@
                     <p>Test</p>
                 </div>
             </div> --}}
-            @if (session()->has('success'))
-            <div id="modular">
-                <div>
-                    <p>{{ session()->get('success') }}</p>
-                </div>
-            </div>
-            @elseif (session()->has('accesserr'))
-                <div id="modular">
-                    <div>
-                        <p>{{ session()->get('AccessErr') }}</p>
-                    </div>
-                </div>
-            @endif
+            @include('includes.session-alerts')
             @yield('content')
             @yield('aside')
         </main>
