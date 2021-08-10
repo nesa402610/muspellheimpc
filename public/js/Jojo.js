@@ -61,7 +61,7 @@ $('.blockOfChoose .block-fixed').click(function (e) {
 
 
 //Скрытие родительского элемента по клику
-$('#modular a').click(function (e) {
+$('#modular a:first-child').click(function (e) {
     e.preventDefault();
     $('.cart_item-added').fadeOut('fast', function () {
         $('#modular').remove();
