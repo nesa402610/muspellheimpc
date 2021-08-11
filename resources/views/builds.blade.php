@@ -37,18 +37,18 @@
             <div class="grid_row">
                 @foreach ($builds as $build)
                     <div id="card" class="buying_card">
-                        <div style="background-image: url('/storage/products_img/{{ $build->product->image }}')">
+                        <div>
                             <div class="build_header">
                                 <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
                             </div>
                             <div class="build_content">
+                                <img src="/storage/products_img/{{ $build->product->image }}" alt="">
                                 <div class="hardware">
-
                                     @foreach ($build->hardwares->take(6) as $hardware)
-                                        <div>
-                                            <a href="{{ route('hardwareView', $hardware->id) }}">{{ $hardware->product->name }}
-                                            </a>
-                                        </div>
+                                            <div>
+                                                <a href="{{ route('hardwareView', $hardware->id) }}">{{ $hardware->product->name }}
+                                                </a>
+                                            </div>
                                     @endforeach
                                 </div>
                             </div>

@@ -51,7 +51,7 @@
             <input name="quantity" type="number" placeholder="Количество" value="{{ $product->quantity }}">
         </th>
         <th>
-            <input required name="image" type="file" placeholder="image" value="0">
+            <input name="image" type="file" placeholder="image" value="0">
         </th>
         {{-- <th>
             <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
