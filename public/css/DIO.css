@@ -520,6 +520,9 @@ a.baka {
     display: flex;
     justify-content: center;
 }
+.table {
+    overflow-y: auto;
+}
 .cart_table {
     width: 100%;
 }
