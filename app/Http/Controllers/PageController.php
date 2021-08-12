@@ -44,6 +44,7 @@ class PageController extends Controller
         $builds = pc_build::where('visibility', 1)->paginate(16);
         $paginate = $builds;
 
+
         return view('builds', compact('builds', 'paginate'));
     }
 

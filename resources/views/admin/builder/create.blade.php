@@ -57,8 +57,9 @@
         }
 
         .hardwares_admin {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: baseline;
         }
 
         .hardwares_admin>div {
@@ -107,7 +108,7 @@
                 <label>Видимость</label>
                 <select name="visibility" type="text" placeholder="visibility">
                     <option value="1">Видим</option>
-                    <option value="1">Скрыт</option>
+                    <option value="0">Скрыт</option>
                 </select>
             </div>
             <div>
@@ -124,66 +125,186 @@
                 <div class="hardwares_admin">
                     <div>
                         <label>Процессор</label>
-                        <select name="hardware[]">
+                        <select name="hardware_CPU_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+
+                            @foreach ($hardwares->where('category_id', 2) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
                         <label>Видеокарта</label>
-                        <select name="hardware[]">
+                        <select name="hardware_GPU1_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 3) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Видеокарта 2 (если есть)</label>
+                        <select name="hardware_GPU2_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 3) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
                         <label>ОЗУ</label>
-                        <select name="hardware[]">
+                        <select name="hardware_RAM_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 4) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
                         <label>МП</label>
-                        <select name="hardware[]">
+                        <select name="hardware_motherboard_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 8) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
                         <label>БП</label>
-                        <select name="hardware[]">
+                        <select name="hardware_SPU_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 5) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
                         <label>ССД</label>
-                        <select name="hardware[]">
+                        <select name="hardware_SSD1_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 6) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
-                        <label>ХДД</label>
-                        <select name="hardware[]">
+                        <label>ССД2 ( если есть)</label>
+                        <select name="hardware_SSD2_id">
                             <option value="0">Нет</option>
-                            @foreach ($hardwares as $hardware)
-                                <option value="{{ $hardware->id }}">{{ $hardware->product->name }}</option>
+                            @foreach ($hardwares->where('category_id', 6) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div>
+                        <label>ССД3 ( если есть)</label>
+                        <select name="hardware_SSD3_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 6) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>ССД4 ( если есть)</label>
+                        <select name="hardware_SSD4_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 6) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>ХДД1</label>
+                        <select name="hardware_HDD2_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 7) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>ХДД2</label>
+                        <select name="hardware_HDD3_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 7) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>ХДД3</label>
+                        <select name="hardware_HDD3_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 7) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>ХДД4</label>
+                        <select name="hardware_HDD4_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares->where('category_id', 7) as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Охлажение CPU</label>
+                        <select name="hardware_CPU_cooler_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Платы расширения PCI1</label>
+                        <select name="hardware_PCI1_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Платы расширения PCI2</label>
+                        <select name="hardware_PCI2_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Платы расширения PCI3</label>
+                        <select name="hardware_PCI3_id">
+                            <option value="0">Нет</option>
+                            @foreach ($hardwares as $hardware)
+                                <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label>Какая ОС</label>
+                        <input type="text" name="hardware_OS_name">
+                    </div>
+                    <div>
+                        <label>Корпус</label>
+                        <input type="text" name="hardware_case">
+                    </div>
+                    <div>
+                        <label>Размеры</label>
+                        <div class="Vflex">
+                            <input type="text" name="hardware_height" placeholder="Высота">
+                            <input type="text" name="hardware_width" placeholder="Ширина">
+                            <input type="text" name="hardware_lenght" placeholder="Глубина">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Вес компа</label>
+                        <input type="text" name="hardware_weight">
                     </div>
                 </div>
             </div>

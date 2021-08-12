@@ -452,6 +452,14 @@ a.baka {
 .build_content, .hardware_content {
     position: relative;
 }
+.build_content .image, .hardware_content .image{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+.build_content .image img, .hardware_content img{
+    width: 180px !important;
+}
 
 .build_footer, .hardware_footer {
     display: flex;

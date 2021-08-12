@@ -36,14 +36,16 @@
         <th>
             <select name="category">
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                    <option @if ( $product->category_id === $category->id ) selected @endif value="{{ $category->id }}">
+                        {{ $category->name }}
+                    </option>
                 @endforeach
             </select>
         </th>
         <th>
             <select name="brand">
                 @foreach ($brands as $brand)
-                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                    <option @if ( $product->brand_id === $brand->id) selected @endif value="{{ $brand->id }}">{{ $brand->name }}</option>
                 @endforeach
             </select>
         </th>
@@ -51,15 +53,19 @@
             <input name="quantity" type="number" placeholder="Количество" value="{{ $product->quantity }}">
         </th>
         <th>
-            <input required name="image" type="file" placeholder="image" value="0">
+            <input name="image" type="file" placeholder="image" value="0">
         </th>
         {{-- <th>
             <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
         </th> --}}
         <th>
             <select required name="g_cat">
+                @if ($product->global_category === 1)
+                <option value="1">Компьютеры</option>
+                @else
                 <option value="2">Комплектующие</option>
                 <option value="3">Периферия</option>
+                @endif
             </select>
         </th>
         <th>

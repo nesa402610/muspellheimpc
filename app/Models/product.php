@@ -13,15 +13,17 @@ class product extends Model
         return $this->belongsToMany(Cart::class);
     }
 
-    // public function pc_builds()
-    // {
-    //     return $this->Many(pc_build::class);
-    // }
+    public function pc_buildsCPU()
+    {
+        return $this->Many(pc_build::class, 'CPU_id');
+    }
 
     public function pc_build()
     {
         return $this->hasOne(pc_build::class, 'product_id');
     }
+
+
     public function hardware()
     {
         return $this->hasMany(hardware::class);

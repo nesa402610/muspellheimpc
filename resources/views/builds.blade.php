@@ -37,19 +37,65 @@
             <div class="grid_row">
                 @foreach ($builds as $build)
                     <div id="card" class="buying_card">
-                        <div style="background-image: url('/storage/products_img/{{ $build->product->image }}')">
+                        <div>
                             <div class="build_header">
                                 <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
                             </div>
                             <div class="build_content">
+                                <div class="image">
+                                    <img src="/storage/products_img/{{ $build->product->image }}" alt="">
+                                </div>
                                 <div class="hardware">
-
-                                    @foreach ($build->hardwares->take(6) as $hardware)
-                                        <div>
-                                            <a href="{{ route('hardwareView', $hardware->id) }}">{{ $hardware->product->name }}
-                                            </a>
-                                        </div>
-                                    @endforeach
+                                    <div GPU>
+                                       @if (!is_null($build->GPU1) )
+                                        {{ $build->GPU1->name }}
+                                        @elseif (!is_null($build->GPU2))
+                                        {{ $build->GPU2->name }}
+                                       @endif
+                                    </div>
+                                    <div CPU>
+                                        @if (!is_null($build->CPU) )
+                                        {{ $build->CPU->name }}
+                                       @endif
+                                    </div>
+                                    <div MB>
+                                        @if (!is_null($build->MB) )
+                                        {{ $build->MB->name }}
+                                       @endif
+                                    </div>
+                                    <div RAM>
+                                        @if (!is_null($build->RAM) )
+                                        {{ $build->RAM->name }}
+                                       @endif
+                                    </div>
+                                    <div DRIVE>
+                                        @if (!is_null($build->SSD1) or !is_null($build->SSD2) or !is_null($build->SSD3) or !is_null($build->SSD4))
+                                            @if (!is_null($build->SSD1))
+                                                {{ $build->SSD1->name }}
+                                            @elseif (!is_null($build->SSD2))
+                                                {{ $build->SSD2->name }}
+                                            @elseif (!is_null($build->SSD3))
+                                                {{ $build->SSD3->name }}
+                                            @elseif (!is_null($SSD4))
+                                                {{ $build->SSD4->name }}
+                                            @endif
+                                        @else
+                                            @if (!is_null($build->HDD1))
+                                                {{ $HDD1->name }}
+                                            @elseif (!is_null($build->HDD2))
+                                                {{ $build->HDD2->name }}
+                                            @elseif (!is_null($build->HDD3))
+                                                {{ $build->HDD3->name }}
+                                            @elseif (!is_null($build->HDD4))
+                                                {{ $build->HDD4->name }}
+                                            @endif
+                                        @endif
+                                    </div>
+                                    <div SPU>
+                                        @if (!is_null($build->SPU) )
+                                        {{ $build->SPU->name }}
+                                       @endif
+                                    </div>
                                 </div>
                             </div>
                             <div class="build_footer">
