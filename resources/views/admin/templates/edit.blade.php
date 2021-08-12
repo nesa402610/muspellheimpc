@@ -29,5 +29,6 @@
             </table>
             <button type="submit">Обновить</button>
         </form>
+        @yield('add')
 @endsection
 

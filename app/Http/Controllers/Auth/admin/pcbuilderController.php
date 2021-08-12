@@ -70,16 +70,42 @@ class pcbuilderController extends Controller
         $store->tier = $request->input('tier');
         $store->product_id = $storeP->id;
         $store->visibility = $request->input('visibility');
+        $store->CPU_id = $request->input('hardware_CPU_id');
+        $store->GPU1_id = $request->input('hardware_GPU1_id');
+        $store->GPU2_id = $request->input('hardware_GPU2_id');
+        $store->MotherBoard_id = $request->input('hardware_MotherBoard_id');
+        $store->RAM_id = $request->input('hardware_RAM_id');
+        $store->SPU_id = $request->input('hardware_SPU_id');
+        $store->CPU_cooler_id = $request->input('hardware_CPU_cooler_id');
+        $store->HDD1_id = $request->input('hardware_HDD1_id');
+        $store->HDD2_id = $request->input('hardware_HDD2_id');
+        $store->HDD3_id = $request->input('hardware_HDD3_id');
+        $store->HDD4_id = $request->input('hardware_HDD4_id');
+        $store->SSD1_id = $request->input('hardware_SSD1_id');
+        $store->SSD2_id = $request->input('hardware_SSD2_id');
+        $store->SSD3_id = $request->input('hardware_SSD3_id');
+        $store->SSD4_id = $request->input('hardware_SSD4_id');
+        $store->PCI1_id = $request->input('hardware_PCI1_id');
+        $store->PCI2_id = $request->input('hardware_PCI2_id');
+        $store->PCI3_id = $request->input('hardware_PCI3_id');
+        $store->OS_name = $request->input('hardware_OS_name');
+        $store->case = $request->input('hardware_case');
+        $store->height = $request->input('hardware_height');
+        $store->width = $request->input('hardware_width');
+        $store->length = $request->input('hardware_lenght');
+        $store->weight = $request->input('hardware_weight');
+
+
         $store->save();
 
-        $build = pc_build::find($store->id);
+        // $build = pc_build::find($store->id);
 
-        foreach ($request->input('hardware') as $unit => $value) {
-            if ($value != 0) {
-                $build->hardwares()->attach($value);
-                // dump($value);
-            }
-        }
+        // foreach ($request->input('hardware') as $unit => $value) {
+        //     if ($value != 0) {
+        //         $build->hardwares()->attach($value);
+        //         // dump($value);
+        //     }
+        // }
 
 
         // $build->hardwares()->attach($request->input('hardware'));
@@ -145,15 +171,42 @@ class pcbuilderController extends Controller
         }
         // dd(1);
         $storeP->tier = $request->input('tier');
+        $storeP->visibility = $request->input('visibility');
+        $storeP->CPU_id = $request->input('hardware_CPU_id');
+        $storeP->GPU1_id = $request->input('hardware_GPU1_id');
+        $storeP->GPU2_id = $request->input('hardware_GPU2_id');
+        $storeP->MotherBoard_id = $request->input('hardware_MotherBoard_id');
+        $storeP->RAM_id = $request->input('hardware_RAM_id');
+        $storeP->SPU_id = $request->input('hardware_SPU_id');
+        $storeP->CPU_cooler_id = $request->input('hardware_CPU_cooler_id');
+        $storeP->HDD1_id = $request->input('hardware_HDD1_id');
+        $storeP->HDD2_id = $request->input('hardware_HDD2_id');
+        $storeP->HDD3_id = $request->input('hardware_HDD3_id');
+        $storeP->HDD4_id = $request->input('hardware_HDD4_id');
+        $storeP->SSD1_id = $request->input('hardware_SSD1_id');
+        $storeP->SSD2_id = $request->input('hardware_SSD2_id');
+        $storeP->SSD3_id = $request->input('hardware_SSD3_id');
+        $storeP->SSD4_id = $request->input('hardware_SSD4_id');
+        $storeP->PCI1_id = $request->input('hardware_PCI1_id');
+        $storeP->PCI2_id = $request->input('hardware_PCI2_id');
+        $storeP->PCI3_id = $request->input('hardware_PCI3_id');
+        $storeP->OS_name = $request->input('hardware_OS_name');
+        $storeP->case = $request->input('hardware_case');
+        $storeP->height = $request->input('hardware_height');
+        $storeP->width = $request->input('hardware_width');
+        $storeP->length = $request->input('hardware_lenght');
+        $storeP->weight = $request->input('hardware_weight');
+
+
+
         $storeP->product->name = $request->input('name');
         $storeP->product->description = $request->input('description');
         $storeP->product->quantity = $request->input('quantity');
         $storeP->product->price = $request->input('price');
         $storeP->product->realese_date = $request->input('realese_date');
         $storeP->product->visibility = $request->input('visibility');
-        $storeP->product->global_category = $request->input('global_category');
-        $storeP->product->category_id = 1;
-        $storeP->product->brand_id = 1;
+
+        // $storeP->product->global_category = $request->input('global_category');
         $storeP->product->save();
         $storeP->save();
 

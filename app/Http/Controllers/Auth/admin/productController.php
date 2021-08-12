@@ -136,7 +136,6 @@ class productController extends Controller
             $product->image = $request->input('name') . '_image' . '.' . $ext;
         }
 
-
         $product->name = $request->input('name');
         $product->slug = str::slug($request->input('name'));
         $product->description = $request->input('description');
@@ -146,10 +145,27 @@ class productController extends Controller
         $product->quantity = $request->input('quantity');
         // $product->code = $request->input('code');
         $product->global_category = $request->input('g_cat');
+
         $product->visibility = $request->input('visibility');
+        if ($product->global_category == 1) {
+            $pPC = pc_build::where('product_id', $product->id)->first();
+            $pPC->visibility = $request->input('visibility');
+            $pPC->save();
+        }elseif ($product->global_category == 2) {
+            $pHW =  hardware::where('product_id', $product->id)->first();
+            $pHW->category_id = $request->input('category');
+            $pHW->brand_id = $request->input('brand');
+            $pHW->visibility = $request->input('visibility');
+            $pHW->save();
 
+        }elseif ($product->global_category == 3) {
+            $pAC = accessory::where('product_id', $product->id)->first();
+            $pAC->category_id = $request->input('category');
+            $pAC->brand_id = $request->input('brand');
+            $pAC->visibility = $request->input('visibility');
+            $pAC->save();
+        }
         $product->save();
-
 
 
 
@@ -175,8 +191,45 @@ class productController extends Controller
     public function vis_change(product $product)
     {
         if ($product->visibility === 0) {
+            if ($product->global_category == 1) {
+                $pPC = pc_build::where('product_id', $product->id)->first();
+                $pPC->visibility = 1;
+                $pPC->save();
+
+            }elseif ($product->global_category == 2) {
+                $pHW =  hardware::where('product_id', $product->id)->first();
+                $pHW->category_id = $request->input('category');
+                $pHW->brand_id = $request->input('brand');
+                $pHW->visibility = 1;
+                $pHW->save();
+
+            }elseif ($product->global_category == 3) {
+                $pAC = accessory::where('product_id', $product->id)->first();
+                $pAC->category_id = $request->input('category');
+                $pAC->brand_id = $request->input('brand');
+                $pAC->visibility = 1;
+                $pAC->save();
+            }
             $product->visibility = 1;
         } else {
+            if ($product->global_category == 1) {
+                $pPC = pc_build::where('product_id', $product->id)->first();
+                $pPC->visibility = 0;
+                $pPC->save();
+            }elseif ($product->global_category == 2) {
+                $pHW =  hardware::where('product_id', $product->id)->first();
+                $pHW->category_id = $request->input('category');
+                $pHW->brand_id = $request->input('brand');
+                $pHW->visibility = 0;
+                $pHW->save();
+
+            }elseif ($product->global_category == 3) {
+                $pAC = accessory::where('product_id', $product->id)->first();
+                $pAC->category_id = $request->input('category');
+                $pAC->brand_id = $request->input('brand');
+                $pAC->visibility = 0;
+                $pAC->save();
+            }
             $product->visibility = 0;
         }
         $product->save();

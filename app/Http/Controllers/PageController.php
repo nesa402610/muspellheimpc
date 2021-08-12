@@ -48,6 +48,7 @@ class PageController extends Controller
         // }
         // dd($hardwares);
 
+
         return view('builds', compact('builds', 'paginate'));
     }
 
