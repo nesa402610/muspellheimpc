@@ -43,10 +43,6 @@ class PageController extends Controller
 
         $builds = pc_build::where('visibility', 1)->paginate(16);
         $paginate = $builds;
-        // foreach ($builds as $build) {
-        //     $hardwares = $build->hardwares->sortByDesc;
-        // }
-        // dd($hardwares);
 
 
         return view('builds', compact('builds', 'paginate'));
