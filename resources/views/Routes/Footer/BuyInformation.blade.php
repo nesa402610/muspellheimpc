@@ -8,13 +8,13 @@
     <div id="size-cutter">
         <h1 style="text-align: center;">Доставка и оплата товара</h1>
         <div class="blockOfChoose">
-            <div data-id="1" class="block-fixed mitsuketa">
+            <div data-id="1" class="block-fixed hover mitsuketa">
                 <h4>Доставка</h4>
             </div>
-            <div data-id="2" class="block-fixed">
+            <div data-id="2" class="block-fixed hover">
                 <h4>Оплата</h4>
             </div>
-            <div data-id="3" class="block-fixed">
+            <div data-id="3" class="block-fixed hover">
                 <h4>Способ оплаты</h4>
             </div>
         </div>

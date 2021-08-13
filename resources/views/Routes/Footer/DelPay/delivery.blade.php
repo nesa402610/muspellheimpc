@@ -1,21 +1,60 @@
 <div data-id="1" class="infoblock mitsuketa">
-    <div class="header">
+    {{-- <div class="header">
         <div data-id="baka" class="block-auto mitsuketa">
             Доставка в пределах МКАД
         </div>
         <div data-id="bakayaro" class="block-auto">
             Доставка за пределами МКАД
         </div>
-        {{-- <div data-id="bakachan" class="block-auto">
+        <div data-id="bakachan" class="block-auto">
             Доставка по России
-        </div> --}}
-    </div>
+        </div>
+    </div> --}}
     <div class="body">
         <div data-id="baka" class="infoblock-info mitsuketa">
             <div class="price">
                 <h2 class="uline">Стоимость доставки</h2>
-                <div>
-                    Бесплатно для компов и 350 для железа
+                <div class="deliveryblock">
+                    <div class="block-fixed border0">
+                        <div class="topEL">
+                            <div>Компьютеры</div>
+                            <div class="KARS">Бесплатно</div>
+                        </div>
+                            <hr class="small">
+                        <div class="midEL">
+                            <ul class="nomark">
+                                <li>Бесплатная доставка по Москве</li>
+                                <li>За пределами МКАД: 50 рублей за каждый км</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block-fixed border0">
+                        <div class="topEL">
+                            <div>Комплектующие</div>
+                            <div>350 Р</div>
+                        </div>
+                            <hr class="small">
+                        <div class="midEL">
+                            <ul class="nomark">
+                                <li>Доставка по Москве 350 Р</li>
+                                <li>За пределами МКАД: +50 рублей за каждый км</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block-fixed border0">
+                        <div class="topEL">
+                            <div>Периферия</div>
+                            <div>350 Р</div>
+                        </div>
+                            <hr class="small">
+                        <div class="midEL">
+                            <ul class="nomark">
+                                <li>Доставка по Москве 350 Р</li>
+                                <li>За пределами МКАД: +50 рублей за каждый км</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="timing">
