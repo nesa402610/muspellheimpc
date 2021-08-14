@@ -4,6 +4,9 @@
     <title>Готовые компьютеры | Сборки | MuspellheimPC</title>
 @endsection
 <style>
+    #card {
+        padding: 0 !important;
+    }
     #card>div {
         height: 100%;
         display: flex;
@@ -39,36 +42,56 @@
                     <div id="card" class="buying_card">
                         <div>
                             <div class="build_header">
-                                <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
-                            </div>
-                            <div class="build_content">
                                 <div class="image">
                                     <img src="/storage/products_img/{{ $build->product->image }}" alt="">
                                 </div>
+                            </div>
+                            <div class="build_content">
+                                    <div class="build_title">
+                                        <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
+                                    </div>
+                                <hr class="small">
                                 <div class="hardware">
                                     <div GPU>
-                                       @if (!is_null($build->GPU1) )
-                                        {{ $build->GPU1->name }}
-                                        @elseif (!is_null($build->GPU2))
-                                        {{ $build->GPU2->name }}
-                                       @endif
+                                        <div>
+                                            Видеокарта
+                                        </div>
+                                        <div>
+                                            @if (!is_null($build->GPU1))
+                                                {{ $build->GPU1->name }}
+                                            @elseif (!is_null($build->GPU2))
+                                                {{ $build->GPU2->name }}
+                                            @endif
+                                        </div>
                                     </div>
                                     <div CPU>
-                                        @if (!is_null($build->CPU) )
-                                        {{ $build->CPU->name }}
-                                       @endif
+                                        <div>
+                                            Процессор
+                                        </div>
+                                        @if (!is_null($build->CPU))
+                                            {{ $build->CPU->name }}
+                                        @endif
                                     </div>
                                     <div MB>
-                                        @if (!is_null($build->MB) )
-                                        {{ $build->MB->name }}
-                                       @endif
+                                        <div>
+                                            Материнская плата
+                                        </div>
+                                        @if (!is_null($build->MB))
+                                            {{ $build->MB->name }}
+                                        @endif
                                     </div>
                                     <div RAM>
-                                        @if (!is_null($build->RAM) )
-                                        {{ $build->RAM->name }}
-                                       @endif
+                                        <div>
+                                            Оперативная память
+                                        </div>
+                                        @if (!is_null($build->RAM))
+                                            {{ $build->RAM->shortname }}
+                                        @endif
                                     </div>
-                                    <div DRIVE>
+                                    {{-- <div DRIVE>
+                                        <div>
+                                            Накопитель
+                                        </div>
                                         @if (!is_null($build->SSD1) or !is_null($build->SSD2) or !is_null($build->SSD3) or !is_null($build->SSD4))
                                             @if (!is_null($build->SSD1))
                                                 {{ $build->SSD1->name }}
@@ -92,10 +115,13 @@
                                         @endif
                                     </div>
                                     <div SPU>
-                                        @if (!is_null($build->SPU) )
-                                        {{ $build->SPU->name }}
-                                       @endif
-                                    </div>
+                                        <div>
+                                            Блок питания
+                                        </div>
+                                        @if (!is_null($build->SPU))
+                                            {{ $build->SPU->name }}
+                                        @endif
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="build_footer">

@@ -64,9 +64,6 @@
         width: 1000px;
         width: calc(100% - 2rem);
     }
-    .grid_row {
-        grid-template-columns: repeat(5, 1fr);
-    }
 
 
 }

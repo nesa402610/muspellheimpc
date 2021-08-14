@@ -123,13 +123,16 @@ h5 {
     font-size: .8rem;
 }
 hr {
-    margin: 1rem 0;
+
     border: 0;
     border-top: solid 2px;
     border-color: hsl(0deg 0% 25%);
 }
 hr.small {
     margin: 0.5rem 0;
+}
+hr.normalus {
+    margin: 1rem 0;
 }
 hr.bigus {
     margin: 2rem 0;
@@ -451,6 +454,11 @@ a.baka {
     background-repeat: no-repeat;
     background-position: right;
 } */
+.build_header .image {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+}
 
 .build > div {
     height: 100%;
@@ -461,29 +469,35 @@ a.baka {
     background-repeat: no-repeat;
     background-position: right;
 }
-
-.build_header, .hardware_title {
+.build_content {
+    padding-top: 1rem;
+}
+.build_title, .hardware_title {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+
 .build_content, .hardware_content {
     position: relative;
 }
-.build_content .image, .hardware_content .image{
+.build_header .image, .hardware_content .image{
     display: flex;
     justify-content: center;
     padding: 1rem 0;
 }
-.build_content .image img, .hardware_content img{
-    width: 180px !important;
+    .hardware_content img{
+    height: 180px !important;
 }
 
 .build_footer, .hardware_footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.build_footer {
+    padding: 1rem;
 }
 .build_footer .price {
     align-self: center;
@@ -506,12 +520,19 @@ a.baka {
 
 .hardware {
     display: flex;
-    flex-direction: column;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* display: grid;
     padding: 1rem 0;
+    grid-template-columns: 1fr 1fr; */
+
 }
 
 .hardware>div {
-    margin-left: .5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    width: 50%;
 }
 
 
@@ -672,7 +693,8 @@ a.baka {
     width: 100%;
 }
 .buying_card img {
-    width: 150px !important;
+    height: 180px !important;
+    width: auto !important;
 }
 
 #products {
@@ -736,8 +758,9 @@ a.baka {
 .grid_row {
     display: grid;
     flex: 1 0 0;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    padding-top: 1rem;
 }
 .grid_row #card {
     margin: 0;
