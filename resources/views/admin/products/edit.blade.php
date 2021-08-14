@@ -2,6 +2,7 @@
 
 @section('add')
     <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+        {{ method_field('PUT') }}
         @csrf
         <div class="admin_create_pc">
             <div>

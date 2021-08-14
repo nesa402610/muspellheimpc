@@ -33,11 +33,11 @@
                         <div>
                             <a href="{{ route('categories.create') }}">Создать</a>
                             <a href="{{ route('categories.edit', $cat->id) }}">Редактировать</a>
-                            <form action="{{ route('categories.destroy', $cat->id) }}" method="post">
+                            {{-- <form action="{{ route('categories.destroy', $cat->id) }}" method="post">
                                 @csrf
-                                {{ method_field('delete') }}
+                                {{ method_field('delete') }} --}}
                                 <button type="submit">Удалить</button>
-                            </form>
+                            {{-- </form> --}}
                         </div>
                     </th>
                     <th></th>

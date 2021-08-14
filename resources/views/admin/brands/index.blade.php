@@ -29,11 +29,11 @@
                         <div>
                             <a href="{{ route('brands.create') }}">Создать</a>
                             <a href="{{ route('brands.edit', $brand->id) }}">Редактировать</a>
-                            <form action="{{ route('brands.destroy', $brand->id) }}" method="post">
+                            {{-- <form action="{{ route('brands.destroy', $brand->id) }}" method="post">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <button type="submit">Удалить</button>
-                            </form>
+                            </form> --}}
                         </div>
                     </th>
                     <th>

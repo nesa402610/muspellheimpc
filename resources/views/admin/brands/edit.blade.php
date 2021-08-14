@@ -1,29 +1,20 @@
 @extends('admin.templates.edit')
 
-
-@section('route_name')
-    {{ route('brands.update', $brand->id) }}
-@endsection
-
-@section('thead')
-    {{ method_field('PUT') }}
-    <tr>
-        <th>Название</th>
-        <th>Изображение</th>
-    </tr>
-@endsection
-
-@section('tbody')
-    <tr>
-        <th>
-            <input name="name" type="text" placeholder="{{ $brand->name }}" value="{{ $brand->name }}" required>
-        </th>
-        <th>
-            <input name="image" type="file" required src="/storage/products_img/{{ $brand->image }}">
-        </th>
-    </tr>
-@endsection
-
-@section('preview')
-
+@section('add')
+    <form action="{{ route('brands.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
+        {{ method_field('PUT') }}
+        @csrf
+        <div class="admin_create_pc">
+            <div>
+                <label>Название</label>
+                <input name="name" type="text" placeholder="{{ $brand->name }}" value="{{ $brand->name }}" required>
+            </div>
+            <div class="admin_create_pc">
+                <div>
+                    <label>Изображение</label>
+                    <input name="image" type="file" required src="/storage/products_img/{{ $brand->image }}">
+                </div>
+            </div>
+        </div>
+    </form>
 @endsection

@@ -101,9 +101,9 @@
                     <div>
                         <label>Процессор</label>
                         <select name="hardware_CPU_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
 
-                            @foreach ($hardwares->where('category_id', 2) as $hardware)
+                            @foreach ($hardwares->where('category_id', 9) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
                         </select>
@@ -111,7 +111,7 @@
                     <div>
                         <label>Видеокарта</label>
                         <select name="hardware_GPU1_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 3) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -120,7 +120,7 @@
                     <div>
                         <label>Видеокарта 2 (если есть)</label>
                         <select name="hardware_GPU2_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 3) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -129,7 +129,7 @@
                     <div>
                         <label>ОЗУ</label>
                         <select name="hardware_RAM_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 4) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -138,7 +138,7 @@
                     <div>
                         <label>МП</label>
                         <select name="hardware_motherboard_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 8) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -147,7 +147,7 @@
                     <div>
                         <label>БП</label>
                         <select name="hardware_SPU_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 5) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -156,7 +156,7 @@
                     <div>
                         <label>ССД</label>
                         <select name="hardware_SSD1_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 6) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -165,7 +165,7 @@
                     <div>
                         <label>ССД2 ( если есть)</label>
                         <select name="hardware_SSD2_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 6) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -174,7 +174,7 @@
                     <div>
                         <label>ССД3 ( если есть)</label>
                         <select name="hardware_SSD3_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 6) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -183,7 +183,7 @@
                     <div>
                         <label>ССД4 ( если есть)</label>
                         <select name="hardware_SSD4_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 6) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -192,7 +192,7 @@
                     <div>
                         <label>ХДД1</label>
                         <select name="hardware_HDD2_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 7) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -201,7 +201,7 @@
                     <div>
                         <label>ХДД2</label>
                         <select name="hardware_HDD3_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 7) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -210,7 +210,7 @@
                     <div>
                         <label>ХДД3</label>
                         <select name="hardware_HDD3_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 7) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -219,7 +219,7 @@
                     <div>
                         <label>ХДД4</label>
                         <select name="hardware_HDD4_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares->where('category_id', 7) as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -228,7 +228,7 @@
                     <div>
                         <label>Охлажение CPU</label>
                         <select name="hardware_CPU_cooler_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -237,7 +237,7 @@
                     <div>
                         <label>Платы расширения PCI1</label>
                         <select name="hardware_PCI1_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -246,7 +246,7 @@
                     <div>
                         <label>Платы расширения PCI2</label>
                         <select name="hardware_PCI2_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach
@@ -255,7 +255,7 @@
                     <div>
                         <label>Платы расширения PCI3</label>
                         <select name="hardware_PCI3_id">
-                            <option value="0">Нет</option>
+                            <option selected value=" ">Нет</option>
                             @foreach ($hardwares as $hardware)
                                 <option value="{{ $hardware->product->id }}">{{ $hardware->product->name }}</option>
                             @endforeach

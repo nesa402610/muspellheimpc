@@ -1,24 +1,20 @@
 @extends('admin.templates.create')
 
-
-@section('route_name')
-    {{ route('brands.store') }}
+@section('add')
+    <form action="{{ route('brands.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="admin_create_pc">
+            <div>
+                <label>Название</label>
+                <input name="name" type="text" placeholder="Название" required>
+            </div>
+            <div class="admin_create_pc">
+                <div>
+                    <label>Изображение</label>
+                    <input name="image" type="file" required>
+                </div>
+            </div>
+        </div>
+    </form>
 @endsection
 
-@section('thead')
-    <tr>
-        <th>Название</th>
-        <th>Изображение</th>
-    </tr>
-@endsection
-
-@section('tbody')
-    <tr>
-        <th>
-            <input name="name" type="text" placeholder="Название" required>
-        </th>
-        <th>
-            <input name="image" type="file" required>
-        </th>
-    </tr>
-@endsection
