@@ -52,6 +52,7 @@ class pcbuilderController extends Controller
 
         $storeP = new product();
         $storeP->name = $request->input('name');
+        $product->shortname = $request->input('shortname');
         $storeP->slug = str::slug($request->input('name'));
         $storeP->description = $request->input('description');
         $storeP->quantity = $request->input('quantity');
@@ -197,9 +198,8 @@ class pcbuilderController extends Controller
         $storeP->length = $request->input('hardware_lenght');
         $storeP->weight = $request->input('hardware_weight');
 
-
-
         $storeP->product->name = $request->input('name');
+        $storeP->product->shortname = $request->input('shortname');
         $storeP->product->description = $request->input('description');
         $storeP->product->quantity = $request->input('quantity');
         $storeP->product->price = $request->input('price');

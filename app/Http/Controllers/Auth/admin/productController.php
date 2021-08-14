@@ -52,6 +52,7 @@ class productController extends Controller
 
         $product = new product();
         $product->name = $request->input('name');
+        $product->shortname = $request->input('shortname');
         $product->slug = str::slug($request->input('name'));
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -137,6 +138,7 @@ class productController extends Controller
         }
 
         $product->name = $request->input('name');
+        $product->shortname = $request->input('shortname');
         $product->slug = str::slug($request->input('name'));
         $product->description = $request->input('description');
         $product->price = $request->input('price');
