@@ -207,7 +207,7 @@ header a.kuree {
 }
 #size-cutter {
     margin: auto;
-    width: 1720px;
+    /* width: 1720px; */
 }
 #modular {
     display: flex;
