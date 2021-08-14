@@ -40,17 +40,17 @@
             <div class="grid_row">
                 @foreach ($builds as $build)
                     <div id="card" class="buying_card">
-                        <div>
+                        <div class="build-buying_card">
                             <div class="build_header">
-                                <div class="image">
+                                <a href="{{ route('buildView', $build->id) }}" class="image">
                                     <img src="/storage/products_img/{{ $build->product->image }}" alt="">
+                                </a>
+                                <div class="build_title">
+                                    <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
                                 </div>
+                                <hr class="small">
                             </div>
                             <div class="build_content">
-                                    <div class="build_title">
-                                        <a href="{{ route('buildView', $build->id) }}"> {{ $build->product->name }}</a>
-                                    </div>
-                                <hr class="small">
                                 <div class="hardware">
                                     <div GPU>
                                         <div>
@@ -58,9 +58,9 @@
                                         </div>
                                         <div>
                                             @if (!is_null($build->GPU1))
-                                                {{ $build->GPU1->name }}
+                                                {{ $build->GPU1->shortname }}
                                             @elseif (!is_null($build->GPU2))
-                                                {{ $build->GPU2->name }}
+                                                {{ $build->GPU2->shortname }}
                                             @endif
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                                             Процессор
                                         </div>
                                         @if (!is_null($build->CPU))
-                                            {{ $build->CPU->name }}
+                                            {{ $build->CPU->shortname }}
                                         @endif
                                     </div>
                                     <div MB>
@@ -77,7 +77,7 @@
                                             Материнская плата
                                         </div>
                                         @if (!is_null($build->MB))
-                                            {{ $build->MB->name }}
+                                            {{ $build->MB->shortname }}
                                         @endif
                                     </div>
                                     <div RAM>
@@ -123,16 +123,16 @@
                                         @endif
                                     </div> --}}
                                 </div>
-                            </div>
-                            <div class="build_footer">
-                                <div class="price">
-                                    {{ $build->product->price }} RUB
+                                <div class="build_footer">
+                                    <div class="price">
+                                        {{ $build->product->price }} RUB
+                                    </div>
+                                    <form class="form_buy" action="{{ route('cart.add', ['id' => $build->product->id]) }}"
+                                        method="post">
+                                        @CSRF
+                                        <button type="submit" class="buy-button" name="button">Купить</button>
+                                    </form>
                                 </div>
-                                <form class="form_buy" action="{{ route('cart.add', ['id' => $build->product->id]) }}"
-                                    method="post">
-                                    @CSRF
-                                    <button type="submit" class="buy-button" name="button">Купить</button>
-                                </form>
                             </div>
                         </div>
                     </div>

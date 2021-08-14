@@ -67,4 +67,13 @@ $('#modular a:first-child').click(function (e) {
         $('#modular').remove();
     });
 });
+//Скрытие родительского элемента через 5 сек
+setTimeout(
+    function()
+    {
+        $('.cart_item-added').fadeOut('fast', function () {
+            $('#modular').remove();
+        });
+    }, 5000);
+
 

@@ -455,7 +455,7 @@ a.baka {
     background-position: right;
 } */
 .build_header .image {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     padding: 0 !important;
 }
@@ -469,8 +469,11 @@ a.baka {
     background-repeat: no-repeat;
     background-position: right;
 }
-.build_content {
+.build_title {
+    display: flex;
+    justify-content: center;
     padding-top: 1rem;
+    color: white !important;
 }
 .build_title, .hardware_title {
     text-align: center;
@@ -478,7 +481,9 @@ a.baka {
     text-transform: uppercase;
 }
 
-
+.build_content {
+    padding: 0 1rem 1rem;
+}
 .build_content, .hardware_content {
     position: relative;
 }
@@ -487,17 +492,14 @@ a.baka {
     justify-content: center;
     padding: 1rem 0;
 }
-    .hardware_content img{
-    height: 180px !important;
+.hardware_content img{
+height: 180px !important;
 }
 
 .build_footer, .hardware_footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.build_footer {
-    padding: 1rem;
 }
 .build_footer .price {
     align-self: center;
@@ -520,7 +522,6 @@ a.baka {
 
 .hardware {
     display: flex;
-    padding: 0 1rem;
     flex-wrap: wrap;
     justify-content: space-between;
     /* display: grid;
@@ -758,7 +759,7 @@ a.baka {
 .grid_row {
     display: grid;
     flex: 1 0 0;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     padding-top: 1rem;
 }
@@ -867,12 +868,12 @@ a.create_build:hover {
     box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
 }
 
-.contentaside {
+/* .contentaside {
     display: grid;
     grid-template-columns: 6fr 1fr;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     gap: 1rem;
-}
+} */
 
 
 .blockOfChoose {
