@@ -2,35 +2,6 @@
 
 
     @section('add')
-        <style>
-            .admin_create_pc>div {
-                display: flex;
-            }
-
-            .admin_create_pc>div>label {
-                width: 10%;
-            }
-
-            .hardwares_admin {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                align-items: baseline;
-            }
-
-            .hardwares_admin>div {
-                display: flex;
-            }
-
-            .hardwares_admin>div>select {
-                width: 350px;
-            }
-
-            .hardwares_admin>div>label {
-                width: 30%;
-                padding: 0.8rem 0;
-            }
-
-        </style>
         <h2 style="margin-top: 10rem">Работает, можешь проверять</h2>
         <form action="{{ route('pcbuilders.update', $build->id) }}" method="POST" enctype="multipart/form-data">
             {{ method_field('PUT') }}
@@ -39,6 +10,10 @@
                 <div>
                     <label>Название</label>
                     <input name="name" value="{{ $build->product->name }}" type="text" placeholder="Название">
+                </div>
+                <div>
+                    <label>Название</label>
+                    <input name="shortname" value="{{ $build->product->shortname }}" type="text" placeholder="Короткое название">
                 </div>
                 <div>
                     <label>Описание</label>

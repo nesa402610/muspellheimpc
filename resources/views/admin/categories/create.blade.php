@@ -1,26 +1,51 @@
 @extends('admin.templates.create')
 
 
-@section('route_name')
-    {{ route('categories.store') }}
-@endsection
+@section('add')
+<style>
+    .admin_create_pc>div {
+        display: flex;
+    }
+    .admin_create_pc input {
+        width: 100%;
+    }
 
-@section('thead')
-    <tr>
-        <th>Название</th>
-        <th>Изображение</th>
-    </tr>
-@endsection
+    .admin_create_pc>div>label {
+        width: 10%;
+    }
 
-@section('tbody')
-    <tr>
-        <th>
+    .hardwares_admin {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: baseline;
+    }
+
+    .hardwares_admin>div {
+        display: flex;
+    }
+
+    .hardwares_admin>div>select {
+        width: 350px;
+    }
+
+    .hardwares_admin>div>label {
+        width: 30%;
+        padding: 0.8rem 0;
+    }
+
+</style>
+<form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="admin_create_pc">
+        <div>
+            <label>Название</label>
             <input name="name" type="text" placeholder="Название" required>
-        </th>
-        <th><input id="image" name="image" type="file" required></th>
-    </tr>
-@endsection
-
-@section('preview')
-    
+        </div>
+        <div>
+            <label>Изображение</label>
+            <input id="image" name="image" type="file" required>
+        </div>
+    </div>
+    <button type="submit">Создать ошубку</button>
+</form>
 @endsection

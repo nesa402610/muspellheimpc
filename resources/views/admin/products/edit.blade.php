@@ -1,81 +1,68 @@
 @extends('admin.templates.edit')
 
-
-@section('route_name')
-    {{ route('products.update', $product->id) }}
-@endsection
-
-@section('thead')
-    {{ method_field('PUT') }}
-    <tr>
-        <th>Название</th>
-        <th>Описание</th>
-        <th>Цена</th>
-        <th>Категория</th>
-        <th>Бренд</th>
-        <th>Количество</th>
-        <th>Изображение</th>
-        <th>Куда</th>
-        <th>Видимость</th>
-        <th>Дата создания</th>
-        <th>Дата обновления</th>
-    </tr>
-@endsection
-
-@section('tbody')
-    <tr>
-        <th>
-            <input name="name" type="text" placeholder="{{ $product->name }}" value="{{ $product->name }}">
-        </th>
-        <th>
-            <input type="text" name="description" placeholder="Описание" value="{{ $product->description }}">
-        </th>
-        <th>
-            <input name="price" type="number" placeholder="Цена" value="{{ $product->price }}">
-        </th>
-        <th>
-            <select name="category">
-                @foreach ($categories as $category)
-                    <option @if ( $product->category_id === $category->id ) selected @endif value="{{ $category->id }}">
-                        {{ $category->name }}
-                    </option>
-                @endforeach
-            </select>
-        </th>
-        <th>
-            <select name="brand">
-                @foreach ($brands as $brand)
-                    <option @if ( $product->brand_id === $brand->id) selected @endif value="{{ $brand->id }}">{{ $brand->name }}</option>
-                @endforeach
-            </select>
-        </th>
-        <th>
-            <input name="quantity" type="number" placeholder="Количество" value="{{ $product->quantity }}">
-        </th>
-        <th>
-            <input name="image" type="file" placeholder="image" value="0">
-        </th>
-        {{-- <th>
-            <input type="text" name="code" placeholder="Код" value="{{ $product->code }}">
-        </th> --}}
-        <th>
-            <select required name="g_cat">
-                @if ($product->global_category === 1)
-                <option value="1">Компьютеры</option>
-                @else
-                <option value="2">Комплектующие</option>
-                <option value="3">Периферия</option>
-                @endif
-            </select>
-        </th>
-        <th>
-            <input type="text" name="visibility" placeholder="Видимость" value="{{ $product->visibility }}">
-        </th>
-        <th>
-            <input value="{{ $product->created_at }}">
-        </th>
-        <th>
-            <input value="{{ $product->updated_at }}">
-        </th>
-    </tr>
+@section('add')
+    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="admin_create_pc">
+            <div>
+                <label>Название</label>
+                <input name="name" type="text" placeholder="Название" value="{{ $product->name }}" required>
+            </div>
+            <div>
+                <label>Короткое название</label>
+                <input name="shortname" type="text" value="{{ $product->shortname }}" placeholder="Короткое имя" required>
+            </div>
+            <div>
+                <label>Описание</label>
+                <input name="description" type="text" value="{{ $product->description }}" placeholder="description" required>
+            </div>
+            <div>
+                <label>Цена</label>
+                <input name="price" type="text" value="{{ $product->price }}" placeholder="price" required>
+            </div>
+            <div>
+                <label">Категория</label>
+                <select name="category" required>
+                    @foreach ($categories as $category)
+                        <option @if ($category->id === $product->category_id) selected @endif value="{{ $category->id }}"> {{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div>
+                <label>Бренд</label>
+                <select name="brand" required>
+                    @foreach ($brands as $brand)
+                        <option @if ($brand->id === $product->brand_id) selected @endif value="{{ $brand->id }}">{{ $brand->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div>
+                <label>Количество</label>
+                <input name="quantity" type="text" placeholder="quantity" value="{{ $product->quantity }}" required>
+            </div>
+            <div>
+                <label>Изображение</label>
+                <input name="image" type="file" placeholder="image">
+            </div>
+            <div>
+                <label>Дата</label>
+                <input name="realese_date" type="date" placeholder="realese_date" value="{{ $product->created_at }}" required>
+            </div>
+            <div>
+                <label>Куда</label>
+                <select name="g_cat" required>
+                    <option @if ($product->global_category === 2) selected @endif value="2">Комплектующие</option>
+                    <option @if ($product->global_category === 3) selected @endif value="3">Периферия</option>
+                </select>
+            </div>
+            <div>
+                <label>Видимость</label>
+                <select name="visibility" type="text" placeholder="visibility" required>
+                    <option @if ($product->visibility === 1) selected @endif value="1">Видим</option>
+                    <option @if ($product->visibility === 0) selected @endif value="0">Скрыт</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">Создать ошубку</button>
+    </form>
 @endsection
