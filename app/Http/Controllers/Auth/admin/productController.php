@@ -60,7 +60,7 @@ class productController extends Controller
         $product->brand_id = $request->input('brand');
         $product->quantity = $request->input('quantity');
         $product->image = $request->input('name') . '_image' . '.' . $ext;
-        $product->realese_date = $request->input('date');
+        $product->realese_date = $request->input('realese_date');
         $product->visibility = $request->input('visibility');
         $product->global_category = $request->input('g_cat');
         $product->save();

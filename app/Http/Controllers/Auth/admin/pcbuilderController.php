@@ -52,7 +52,7 @@ class pcbuilderController extends Controller
 
         $storeP = new product();
         $storeP->name = $request->input('name');
-        $product->shortname = $request->input('shortname');
+        $storeP->shortname = $request->input('shortname');
         $storeP->slug = str::slug($request->input('name'));
         $storeP->description = $request->input('description');
         $storeP->quantity = $request->input('quantity');
@@ -61,7 +61,7 @@ class pcbuilderController extends Controller
         $storeP->realese_date = $request->input('realese_date');
         $storeP->visibility = $request->input('visibility');
         $storeP->global_category = 1;
-        $storeP->category_id = 2;
+        $storeP->category_id = 5;
         $storeP->brand_id = 2;
         $storeP->save();
         $request->file('image')->storeAs('products_img', $storeP->slug . '_pcbuild'. '.' . $ext, 'public');
