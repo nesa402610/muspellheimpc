@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
-<style>
-    th {
-        padding: 0 1rem;
-    }
-</style>
+    <style>
+        th {
+            padding: 0 1rem;
+        }
+
+    </style>
     <table style="border-collapse: unset; border-spacing: 0px 6px;">
         <thead>
             <tr>
@@ -27,13 +28,11 @@
         <tbody>
             <tr>
                 <form action="{{ route('products.create') }}">
-                <button type="submit">Добавить продукт</button>
+                    <button type="submit">Добавить продукт</button>
                 </form>
             </tr>
             @foreach ($products as $product)
-                <tr @if ($product->visibility == 1)
-                    class="admin_product_visible"
-                @endif>
+                <tr @if ($product->visibility == 1) class="admin_product_visible" @endif>
                     <th>
                         {{ $loop->iteration }}
                     </th>
@@ -53,17 +52,17 @@
                         <div>
                             <a href="{{ route('products.create') }}">Создать</a>
                             <a href="{{ route('products.edit', $product->id) }}">Редактировать</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                            <button type="submit" data-id="{{ $product->id }}" class="admin delete-btn">Удалить</button>
+                            {{-- <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                                 @csrf
-                                <button type="submit">Удалить</button>
                                 {{ method_field('delete') }}
-                            </form>
+                            </form> --}}
                         </div>
                     </th>
                     <th>
                         <form action="{{ route('products.vis_change', $product->id) }}" method="POST">
                             @csrf
-                            <button class="submit" >
+                            <button type="submit">
                                 Изменнить видимость
                             </button>
                         </form>
@@ -74,7 +73,20 @@
     </table>
     <style>
         .admin_product_visible {
-         background: hsl(245deg 75% 60%) !important;
+            background: hsl(245deg 75% 60%) !important;
         }
+
     </style>
+    <script>
+        $('.admin.delete-btn').click(function(e) {
+            e.preventDefault();
+            var dataid = $(this).attr('data-id');
+            console.log(dataid);
+            $('.admin_modular').css('display', 'flex');
+            $('.admin_modular .admin.confirm-action form').attr('action',
+                "https://muspellheimpc.pw/admin/products/" + dataid);
+
+        });
+
+    </script>
 @endsection

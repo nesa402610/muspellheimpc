@@ -15,6 +15,7 @@
                 </div>
             </div>
         </div>
+        <button type="submit">Создать</button>
     </form>
 @endsection
 

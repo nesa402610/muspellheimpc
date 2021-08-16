@@ -36,7 +36,7 @@
                             {{-- <form action="{{ route('categories.destroy', $cat->id) }}" method="post">
                                 @csrf
                                 {{ method_field('delete') }} --}}
-                                <button type="submit">Удалить</button>
+                                <button type="submit" data-id="{{ $cat->id }}" class="admin delete-btn">Удалить</button>
                             {{-- </form> --}}
                         </div>
                     </th>
@@ -45,4 +45,15 @@
             @endforeach
         </tbody>
     </table>
+    <script>
+            $('.admin.delete-btn').click(function(e) {
+        e.preventDefault();
+        var dataid = $(this).attr('data-id');
+        console.log(dataid);
+        $('.admin_modular').css('display', 'flex');
+        $('.admin_modular .admin.confirm-action form').attr('action',
+            "https://muspellheimpc.pw/admin/categories/" + dataid);
+
+    });
+    </script>
 @endsection
