@@ -1,12 +1,12 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/DIO.css') }}"/>
-{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/HAYATO.css') }}"/> --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/HAYATO.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/all.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('fonts/nigerundayo/css/all.min.css') }}"/>
     <meta name="yandex-verification" content="4c2a3b0272dcb6a0" />
     <meta name='wmail-verification' content='a1babf31c8e7a9f008cdd1ec9ddc214c' />
     <meta name="msvalidate.01" content="F291E22204F94D7CE2B954661475B13E" />
     <meta name="application-name" content="Интернет-магазин компьтеров">
-    {{-- <meta name="viewport" content="scale=1.0"> --}}
+    <meta name="viewport"content="width=device-width, maximum-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="Интернет-магазин компьютерной техники. У нас можно заказть полностью готовый компьютер, купить отдельно комплектующие и перефирию для своего компьютера.">
     <meta name="keywords" content="muspellheim, muspelheim, muspelheim pc, муспельхейм, муспеллхеймпс, муспеллхейм, интернет-магазин, магазин компьютерной техники, pc, computer, comp, компьютер, комп, ПК, сборка, комплектующие, перефирия, запчасти, hardware, все для компьютера, готовые компьютеры">
