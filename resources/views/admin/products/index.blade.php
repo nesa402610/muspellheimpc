@@ -5,8 +5,12 @@
 @endsection
 
 @section('content')
-
-    <table>
+<style>
+    th {
+        padding: 0 1rem;
+    }
+</style>
+    <table style="border-collapse: unset; border-spacing: 0px 6px;">
         <thead>
             <tr>
                 <th>Номер</th>
