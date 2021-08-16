@@ -207,7 +207,7 @@ header a.kuree {
 }
 #size-cutter {
     margin: auto;
-    /* width: 1720px; */
+    width: 1720px;
 }
 #modular {
     display: flex;
@@ -841,6 +841,14 @@ a.create_build:hover {
 #paginator {
     display: flex;
     justify-content: center;
+    padding: 1rem 0;
+}
+#paginator > div{
+    padding: .5rem;
+}
+#paginator a.disabled {
+    color: hsl(0deg 0% 70%) !important;
+    cursor: default;
 }
 
 .hardware_content{
