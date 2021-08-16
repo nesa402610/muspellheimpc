@@ -67,7 +67,8 @@ class PageController extends Controller
 
     public function hardwarePaginator()
     {
-        $hardwares = hardware::where('visibility', 1)->paginate(16);
+        $hardwares = hardware::where('visibility', 1)->paginate(15);
+        $paginate = $hardwares;
 
         $categories = category::get();
 
@@ -76,7 +77,7 @@ class PageController extends Controller
 
         // dd($a);
 
-        return view('hardware', compact('hardwares', 'categories', 'amounth'));
+        return view('hardware', compact('hardwares', 'categories', 'amounth', 'paginate'));
     }
     public function filter_hardwarePaginator($category)
     {
