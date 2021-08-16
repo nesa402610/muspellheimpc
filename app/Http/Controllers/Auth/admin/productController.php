@@ -183,9 +183,7 @@ class productController extends Controller
      */
     public function destroy(product $product)
     {
-        $product->visibility = 0;
-
-        $product->save();
+        $product->delete();
 
         return redirect()->route('products.index');
     }
@@ -200,15 +198,11 @@ class productController extends Controller
 
             }elseif ($product->global_category == 2) {
                 $pHW =  hardware::where('product_id', $product->id)->first();
-                $pHW->category_id = $request->input('category');
-                $pHW->brand_id = $request->input('brand');
                 $pHW->visibility = 1;
                 $pHW->save();
 
             }elseif ($product->global_category == 3) {
                 $pAC = accessory::where('product_id', $product->id)->first();
-                $pAC->category_id = $request->input('category');
-                $pAC->brand_id = $request->input('brand');
                 $pAC->visibility = 1;
                 $pAC->save();
             }
@@ -220,15 +214,11 @@ class productController extends Controller
                 $pPC->save();
             }elseif ($product->global_category == 2) {
                 $pHW =  hardware::where('product_id', $product->id)->first();
-                $pHW->category_id = $request->input('category');
-                $pHW->brand_id = $request->input('brand');
                 $pHW->visibility = 0;
                 $pHW->save();
 
             }elseif ($product->global_category == 3) {
                 $pAC = accessory::where('product_id', $product->id)->first();
-                $pAC->category_id = $request->input('category');
-                $pAC->brand_id = $request->input('brand');
                 $pAC->visibility = 0;
                 $pAC->save();
             }
