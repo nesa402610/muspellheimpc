@@ -850,6 +850,15 @@ a.create_build:hover {
     color: hsl(0deg 0% 70%) !important;
     cursor: default;
 }
+.product-status {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+.product-status > div {
+    position: absolute;
+
+}
 
 .hardware_content{
     display: flex;
