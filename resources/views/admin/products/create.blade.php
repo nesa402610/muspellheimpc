@@ -63,6 +63,6 @@
                 </select>
             </div>
         </div>
-        <button type="submit">Создать ошубку</button>
+        <button type="submit">Создать продукт</button>
     </form>
 @endsection
