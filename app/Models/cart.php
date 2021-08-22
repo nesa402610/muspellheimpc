@@ -28,7 +28,7 @@ class cart extends Model
         return $sum;
     }
 
-    public function saveOrder($name, $email, $phone, $adress)
+    public function saveOrder($name, $email, $phone, $adress, $cart)
     {
 
 
@@ -45,9 +45,10 @@ class cart extends Model
             $this->adress = $adress;
             $this->status = 1;
             $this->save();
+            // Mail::to('muspellheimPc@yandex.ru')->send(new orderconfirmed($name));
+            Mail::to($email)->send(new orderconfirmed($name, $email, $cart));
+            // Mail::to('argyleferris@gmail.com')->send(new orderconfirmed($name));
             session()->forget('cart_id');
-            Mail::to('muspellheimPc@yandex.ru')->send(new orderconfirmed($name));
-            Mail::to($email)->send(new orderconfirmed($name));
             return true;
 
         } else {

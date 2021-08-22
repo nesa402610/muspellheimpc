@@ -14,15 +14,20 @@ class orderconfirmed extends Mailable
 
 
     protected $name;
+    protected $email;
+    protected $cart;
     /**
      *
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name, $email, $cart)
     {
         $this->name = $name;
+        $this->email = $email;
+        $this->cart = $cart;
+
     }
 
     /**
@@ -33,7 +38,9 @@ class orderconfirmed extends Mailable
     public function build()
     {
         return $this->view('Mails.ForUsers', [
-            'name' => $this->name
+            'name' => $this->name,
+            'email' => $this->email,
+            'cart' => $this->cart
         ]);
     }
 }

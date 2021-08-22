@@ -32,7 +32,7 @@ class cartController extends Controller
             $cart = Cart::findOrFail($cart_id);
         }
         $cart = Cart::find($cart_id);
-        $success = $cart->saveOrder($request->name, $request->email, $request->phone, $request->adress);
+        $success = $cart->saveOrder($request->name, $request->email, $request->phone, $request->adress, $cart);
 
         // dd($request->name);
 
