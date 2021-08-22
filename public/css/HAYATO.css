@@ -156,6 +156,16 @@
     #modular > div {
         width: 60%;
     }
+
+    .blockOfChoose {
+        flex-wrap: wrap;
+    }
+    .blockOfChoose .block-fixed {
+        min-height: auto;
+    }
+    .infoblock .body .deliveryblock {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 520px) and (min-width: 375px) {
