@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\orderconfirmed;
 use App\Models\product;
 use App\Models\pc_build;
 use App\Models\accessory;
@@ -41,7 +42,7 @@ class PageController extends Controller
     public function buildsPaginator(Request $request)
     {
 
-        $builds = pc_build::where('visibility', 1)->paginate(16);
+        $builds = pc_build::where('visibility', 1)->orderBy('id', 'desc')->paginate(16);
         $paginate = $builds;
 
 
@@ -67,7 +68,7 @@ class PageController extends Controller
 
     public function hardwarePaginator()
     {
-        $hardwares = hardware::where('visibility', 1)->paginate(15);
+        $hardwares = hardware::where('visibility', 1)->orderBy('id', 'desc')->paginate(15);
         $paginate = $hardwares;
 
         $categories = category::get();
@@ -105,11 +106,13 @@ class PageController extends Controller
         // $hardware = pc_hardware::;
     }
 
-    public function sendEmail()
-    {
-        Mail::to('gcheremisin1999@gmail.com')->send(new OrderShipped());
-        return redirect('/');
-    }
+    // public function sendEmail()
+    // {
+    //     $name = 'Ferris';
+    //     $email = 'argyleferris@gmail.com';
+    //     // Mail::to('argyleferris@gmail.com')->send(new orderconfirmed($name));
+    //     return redirect('/');
+    // }
 
     public function buildView(pc_build $build)
     {
