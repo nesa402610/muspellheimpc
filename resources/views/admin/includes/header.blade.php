@@ -26,6 +26,9 @@
                 <div class="nav-item">
                     <a href="{{ route('pcbuilders.index') }}">PC BUILDER</a>
                 </div>
+                <div class="nav-item">
+                    <a href="{{ route('sendEmail') }}">Почта тест</a>
+                </div>
             </div>
             <div class="header_block">
                 @auth
