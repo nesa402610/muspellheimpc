@@ -23,18 +23,28 @@ class usercontroller extends Controller
 
     public function userprofile()
     {
-        // $a = cart::where('phone', auth::user()->phone)->get();
-        // foreach ($a as $b) {
-        //    $c = $b->cart_product()->get();
-        //     dd($c);
-        // }
-        // dd($a);
-        // $carts = cart::where('phone', auth::user()->phone)->get();
 
-        // dd($cartID);
-        $orders = cart::where('email', auth::user()->email)->where('phone', auth::user()->phone)->get();
-        // dd(cart::cart_product());
+        $orders = cart::where('phone', auth::user()->phone)->get();
+
+        // foreach ($orders as $order) {
+        //     // $a = $order->orders();
+        //     // dd($order);
+        //     // dump($order->orders());
+        // }
+
+        // dump($order->orders());
+        // dump($ordersALL);
+        // $orders = cart::where('user_id', auth::user()->id)->get();
+        // foreach ($carts as $cart_id) {
+        //     $cart = cart::find($cart_id->id);
+        // }
+        // $test = cart::orders();
+        // dump($cart);
+        // dd(cart::orders());
+        // dump($order_items);
+        // $orders = cart::findorFail(31);
         // $cartProducts = cart::find()
+        // dd(12);
         return view('auth.userprofile', compact('orders'));
     }
 }

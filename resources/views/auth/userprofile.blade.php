@@ -32,12 +32,35 @@
                 </div>
             </div>
             <div class="userorders">
-                <h4>Orders</h4>
+                <h4>Заказы</h4>
                 <div>
-                    @foreach ($orders as $order)
-                        {{ $order->name }}
-                        {{ $order->status }}
-                    @endforeach
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Номер заказа</th>
+                                <th>Купленные товары</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($orders as $order)
+                                <tr>
+                                    <th>
+                                      <div>  {{ $order->id }}</div>
+                                    </th>
+                                    <th>
+                                        @foreach ($order->products as $item)
+                                            <div>
+                                                {{ $item->name }}
+                                            </div>
+                                        @endforeach
+                                    </th>
+                                    <th>
+                                        {{ $order->getFullprice() }} рублей
+                                    </th>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

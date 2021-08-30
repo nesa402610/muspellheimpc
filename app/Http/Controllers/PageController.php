@@ -157,4 +157,6 @@ class PageController extends Controller
     {
         return view('Routes.Footer.Warranty');
     }
+
 }
+
