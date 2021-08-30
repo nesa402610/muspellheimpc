@@ -40,6 +40,11 @@ body {
 label a {
     cursor: pointer;
 }
+label.tips {
+    font-size: 1rem;
+    padding: 0.3rem .8rem !important;
+    color: hsl(0deg 0% 75%);
+}
 table {
     border-collapse: collapse;
 }
@@ -568,6 +573,30 @@ height: 180px !important;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
+}
+.orders-table {
+    border-spacing: .5rem;
+    width: 100%;
+}
+.orders-table tr {
+    border-bottom: solid 2px hsl(0deg 0% 20%);
+}
+/* .orders-table tbody th::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: red;
+    display: block;
+} */
+.orders-table th{
+    text-align: left;
+    font-weight: normal;
+}
+.orders-table th:first-child {
+    width: 8%;
+}
+.orders-table th div{
+    padding: 0.5rem;
 }
 .table {
     overflow-y: auto;
@@ -1102,6 +1131,8 @@ form#login .login_footer {
 }
 .userprofile_data > div {
     width: 100%;
+    max-height: 20rem;
+    overflow-y: auto;
 }
 .userinfo, .userorders {
     display: flex;
