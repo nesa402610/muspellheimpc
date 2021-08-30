@@ -51,10 +51,14 @@ Route::group([
     'middleware' => 'admincheck'
 
 ], function () {
+    Route::get('/all-images', 'PageController@TestPage')->name('admin.test');
+    Route::post('/all-images/FileDelete/{image}', 'PageController@TestPageDelete')->name('admin.filedelite')->where('image', '[A-Za-z0-9]+.+[A-Za-z0-9]');
+
     Route::get('/home', 'PageController@home')->name('admin.home');
     Route::get('/orders', 'PageController@orders')->name('admin.orders');
     Route::get('/order/{id}', 'PageController@order')->name('admin.order');
     Route::post('/order_processing_end/{id}', 'PageController@endProccessing')->name('admin.endProcessing');
+
 
     Route::resource('products', 'productController');
     Route::post('products/{product}/vis_change', 'productController@vis_change')->name('products.vis_change');
@@ -65,7 +69,7 @@ Route::group([
     Route::post('pcbuilders/{pc_build}/hide', 'pcbuilderController@hide')->name('pcbuilders.hide');
     Route::post('pcbuilders/{pc_build}/restore', 'pcbuilderController@restore')->name('pcbuilders.restore');
 
-    Route::get('/test', 'pageController@test');
+    // Route::get('/test', 'pageController@test');
 });
 
 // Route::group(['namespace' => 'auth\admin'],function () {
