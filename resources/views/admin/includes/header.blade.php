@@ -27,10 +27,14 @@
                     <a href="{{ route('pcbuilders.index') }}">PC BUILDER</a>
                 </div>
                 <div class="nav-item">
-                    <a href="{{ route('sendEmail') }}">Почта тест</a>
+                    <a href="{{ route('admin.test') }}">Test page</a>
                 </div>
             </div>
             <div class="header_block">
+                <div class="nav-item">
+                    Поиск
+                    <input name="test.search" type="text">
+                </div>
                 @auth
                     @if (Auth::user()->isAdmin())
                         <div class="nav-item">

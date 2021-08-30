@@ -10,6 +10,8 @@ use App\Models\brand;
 use App\Models\hardware;
 use App\Models\pc_build;
 
+use Storage;
+
 
 class pagecontroller extends Controller
 {
@@ -46,6 +48,23 @@ class pagecontroller extends Controller
     {
         $hardware = hardware::first();
         dump($hardware->brand->name);
+    }
+
+    public function TestPage()
+    {
+        // $images = Storage::disk('public')->allfiles();
+        $dir = Storage::disk('public')->alldirectories();
+        foreach ($dir as $d) {
+            $images = storage::disk('public')->allfiles($d);
+
+        }
+        return view('admin.test', compact('images', 'dir'));
+    }
+    public function TestPageDelete($image)
+    {
+        // dd($image);
+        storage::disk('public')->delete($image);
+        return redirect()->back();
     }
 
 }

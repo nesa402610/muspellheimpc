@@ -43,6 +43,7 @@
                         <div class="phone">
                             {{-- <label for="phone">Телефон</label> --}}
                             <input id="phone" type="phone" name="phone" required placeholder="Телефон">
+                            <label class="tips">Введите номер в виде: 7123456789</label>
                         </div>
                         <div class="login">
                             {{-- <label for="email">Email</label> --}}
@@ -75,4 +76,23 @@
             </form>
         </div>
     </div>
+@endsection
+                   <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
