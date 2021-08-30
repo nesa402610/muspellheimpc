@@ -50,7 +50,6 @@ class cart extends Model
             // Mail::to('argyleferris@gmail.com')->send(new orderconfirmed($name));
             session()->forget('cart_id');
             return true;
-
         } else {
             session()->forget('cart_id');
             return false;
@@ -60,5 +59,12 @@ class cart extends Model
     public function waitingFor()
     {
         return $this->where('status', 1)->get();
+    }
+
+
+    public function order()
+    {
+
+        return $this->products;
     }
 }
