@@ -375,22 +375,24 @@ main {
     bottom: 0;
     right: 0;
     left: 0;
+    padding: 0 1rem;
 }
 
 .scroll-selector ul {
     display: flex;
     justify-content: center;
+    gap: 0.4rem;
 }
 
 .scroll-selector ul li {
-    padding: .5rem;
+    width: 15%;
 }
 
 .scroll-selector ul li a {
     display: flex;
     height: 0.3rem;
     background-color: white;
-    width: 3rem;
+    /* width: 3rem; */
 }
 
 .scroll-selector ul li a.baka {
@@ -828,7 +830,7 @@ a.create_build:hover {
     width: 310px;
     padding: 1rem;
     position: relative;
-    border-bottom: solid 2px hsl(30deg 90% 60%);
+    /* border-bottom: solid 2px hsl(30deg 90% 60%); */
 }
 #product_preview .showroom .img {
     display: flex;
@@ -856,6 +858,10 @@ a.create_build:hover {
 }
 #product_preview .information {
     margin-left: 2rem;
+}
+#product_preview .footer .price {
+    font-size: 2rem;
+
 }
 
 .hardwaresInBuild {
