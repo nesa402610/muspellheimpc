@@ -9,7 +9,7 @@ use App\Models\hardware;
 use App\Models\accessory;
 use App\Models\pc_build;
 use App\Models\category;
-
+use App\Models\product_images;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -131,11 +131,29 @@ class productController extends Controller
     public function update(Request $request, product $product)
     {
 
+
         if (!is_null($request->file('image'))) {
             $ext = $request->file('image')->extension();
-            $request->file('image')->storeAs('products_img', $request->input('name') . '_image'. '.' . $ext, 'public');
-            $product->image = $request->input('name') . '_image' . '.' . $ext;
+            $request->file('image')->storeAs('products_img', srt::slug($request->input('name')) . '_image'. '.' . $ext, 'public');
+            $product->image = str::slug($request->input('name')) . '_image' . '.' . $ext;
         }
+        if (!is_null($request->file('images'))) {
+            $imgs = $request->file('images');
+            $N = 1;
+            foreach ($imgs as $img) {
+                $ext = $img->extension();
+                $pimgs = new product_images();
+                $pimgs->product_id = $product->id;
+                $pimgs->image_name = 'products_img/'.$product->id.'_'.str::slug($product->shortname). '/images/' . str::slug($request->input('name')) . '_' . $N . '.' . $ext;
+                // dump($pimgs);
+                $img->storeAs('products_img/'.$product->id.'_'.str::slug($product->shortname).'/images', str::slug($request->input('name')) . '_' . $N . '.' . $ext, 'public');
+                $pimgs->save();
+                $N++;
+                // dump($product->images);
+                // dd('products_image/'.$product->id.'_'.str::slug($product->shortname).'/images');
+            }
+        }
+        // dd();
 
         $product->name = $request->input('name');
         $product->shortname = $request->input('shortname');
@@ -147,6 +165,9 @@ class productController extends Controller
         $product->quantity = $request->input('quantity');
         // $product->code = $request->input('code');
         $product->global_category = $request->input('g_cat');
+
+
+        // $product->product_images = $request->input('images');
 
         $product->visibility = $request->input('visibility');
         if ($product->global_category == 1) {

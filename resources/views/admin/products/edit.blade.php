@@ -63,7 +63,20 @@
                     <option @if ($product->visibility === 0) selected @endif value="0">Скрыт</option>
                 </select>
             </div>
+            <div>
+                <label>Изображения</label>
+                <input type="file" name="images[]" multiple>
+            </div>
         </div>
-        <button type="submit">Создать ошубку</button>
+
+        {{-- <div class="admin.images">
+            @foreach ($img as )
+
+            @endforeach
+            <div>
+
+            </div>
+        </div> --}}
+        <button type="submit">Обновить</button>
     </form>
 @endsection
