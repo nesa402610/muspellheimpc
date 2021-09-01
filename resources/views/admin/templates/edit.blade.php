@@ -15,6 +15,7 @@
         <style>
             .admin_create_pc>div {
                 display: flex;
+                align-items: center;
             }
             .admin_create_pc input {
                 width: 100%;
