@@ -12,6 +12,8 @@ use App\Models\category;
 use App\Models\product_images;
 use Illuminate\Support\Str;
 
+
+use Storage;
 use Illuminate\Http\Request;
 
 class productController extends Controller
@@ -138,9 +140,21 @@ class productController extends Controller
             $product->image = str::slug($request->input('name')) . '_image' . '.' . $ext;
         }
         if (!is_null($request->file('images'))) {
-            $imgs = $request->file('images');
+
+            //Удаление файлов с диска и удаление данных в БД
+            if ($product->images()->count() !== 0) {
+                $BDimgs = $product->images()->get();
+                foreach ($BDimgs as $BDimg) {
+                    storage::disk('public')->delete($BDimg->image_name);
+                    $BDimg->delete();
+                }
+            }
+
             $N = 1;
+            $imgs = $request->file('images');
             foreach ($imgs as $img) {
+
+                // $product->images()->delete()
                 $ext = $img->extension();
                 $pimgs = new product_images();
                 $pimgs->product_id = $product->id;
@@ -149,6 +163,10 @@ class productController extends Controller
                 $img->storeAs('products_img/'.$product->id.'_'.str::slug($product->shortname).'/images', str::slug($request->input('name')) . '_' . $N . '.' . $ext, 'public');
                 $pimgs->save();
                 $N++;
+                // dump($product->images()->get());
+                // dump($img->image_name);
+                // dump(storage::disk('public'))
+                // dd();
                 // dump($product->images);
                 // dd('products_image/'.$product->id.'_'.str::slug($product->shortname).'/images');
             }
