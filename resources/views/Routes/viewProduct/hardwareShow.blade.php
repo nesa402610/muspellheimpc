@@ -56,8 +56,8 @@
                 </div>
                 <div class="footer flex">
                     <div class="Vflex gapA">
-                        <div class="buy-button">
-                            {{ $hardware->product->price }} рублей
+                        <div class="price">
+                            {{ number_format($hardware->product->price, 0, ',', ' ') }} ₽
                         </div>
                         <form class="form_buy" action="{{ route('cart.add', ['id' => $hardware->product->id]) }}"
                             method="post">
