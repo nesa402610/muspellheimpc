@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\auth\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\accessory;
 use Illuminate\Http\Request;
 
 use App\Models\cart;
 use App\Models\brand;
 use App\Models\hardware;
 use App\Models\pc_build;
+use App\Models\product;
 
 use Storage;
 
@@ -56,7 +58,6 @@ class pagecontroller extends Controller
         $dir = Storage::disk('public')->alldirectories();
         foreach ($dir as $d) {
             $images = storage::disk('public')->allfiles($d);
-
         }
         return view('admin.test', compact('images', 'dir'));
     }
@@ -67,4 +68,20 @@ class pagecontroller extends Controller
         return redirect()->back();
     }
 
+
+    public function search(Request $request)
+    {
+        // dd($request->input('search'));
+        $q = $request->input('search');
+        $p = product::where('name', 'LIKE', '%' . $q . '%')->get();
+        // dump($p);
+
+
+        // dump($hw);
+        // dd();
+        // $pc = pc_build::where('name', 'LIKE', '%' . $q . '%')->get();
+        // dd($data);
+
+        return view('Routes.Header.search', compact('p'));
+    }
 }

@@ -49,6 +49,7 @@ class CategoryController extends Controller
 
         $store = new category();
         $store->name = $request->input('name');
+        $store->visibility = $request->input('visibility');
         $store->slug = str::slug($request->input('name'));
         $store->image = str::slug($request->input('name')) . '_image' . '.' . $ext;
         $store->save();
@@ -75,7 +76,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        dd($category);
+        // dd($category);
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -96,6 +97,7 @@ class CategoryController extends Controller
 
         // dd(str::slug($request->input('name')));
         $category->name = $request->input('name');
+        $category->visibility = $request->input('visibility');
         $category->slug = str::slug($request->input('name'));
 
         $category->save();

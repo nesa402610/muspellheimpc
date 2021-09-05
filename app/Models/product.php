@@ -31,7 +31,7 @@ class product extends Model
 
     public function hardware()
     {
-        return $this->hasMany(hardware::class);
+        return $this->hasOne(hardware::class);
     }
     public function accessories()
     {
