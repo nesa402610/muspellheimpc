@@ -84,11 +84,11 @@ class PageController extends Controller
     {
         // $categoryID = category::where('name', $category)->get();
 
-        $hardwares = hardware::where('visibility', 1)->where('category_id', $category)->paginate(16);
-
+        $hardwares = hardware::where('visibility', 1)->orderBy('id', 'desc')->where('category_id', $category)->paginate(16);
+        $paginate = $hardwares;
         $categories = category::get();
 
-        return view('hardware', compact('hardwares', 'categories'));
+        return view('hardware', compact('hardwares', 'categories', 'paginate'));
     }
 
     public function accessoriesPaginator()
