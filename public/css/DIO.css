@@ -53,7 +53,6 @@ table {
 button {
     border: none;
     width: 100%;
-    line-height: 1.4;
     background: white;
     color: black;
     transition: all .2s;
@@ -65,7 +64,7 @@ button {
     cursor: pointer;
     background: hsl(30deg 90% 60%);
     padding: .3rem;
-    line-height: 1.6rem;
+    line-height: 1.4;
 }
 button:hover {
     filter: brightness(0.8);
@@ -183,6 +182,9 @@ ul.nomark li {
 .KARS::after {
     content: "*";
     color: hsl(0deg 0% 60%);
+}
+.tcent {
+    text-align: center;
 }
 header {
     height: 58px;
@@ -390,7 +392,7 @@ main {
 
 .scroll-selector ul li a {
     display: flex;
-    height: 0.3rem;
+    height: 0.4rem;
     background-color: white;
     /* width: 3rem; */
 }
@@ -683,10 +685,10 @@ height: 180px !important;
 .buy-button {
     border: none;
     border-radius: 0;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 1rem;
     background-color: hsl(30deg 90% 60%);
     color: black;
-    line-height: 1.6rem;
+    line-height: 1.6;
     /* font-size: 1.3rem; */
 }
 
@@ -787,10 +789,14 @@ height: 180px !important;
     display: flex;
     grid-gap: 1rem;
 }
+.grid_inline {
+    display: inline-block;
+    width: 75%;
+}
 .grid_row {
     display: grid;
     flex: 1 0 0;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     padding-top: 1rem;
 }
@@ -935,7 +941,16 @@ a.create_build:hover {
     font-size: 1.3rem;
     box-shadow: 0px 0px 5px 0px hsl(25deg 100% 50% / 11%);
 }
-
+aside {
+    display: inline-block;
+    width: 20%;
+    float: right;
+    padding-top: 1rem;
+}
+.contentaside {
+    /* display: flex; */
+    /* gap: 2rem; */
+}
 /* .contentaside {
     display: grid;
     grid-template-columns: 6fr 1fr;
@@ -1000,6 +1015,18 @@ a.create_build:hover {
 }
 .block-fixed.border0 {
     border: none !important;
+}
+.block-fixed.delivery {
+    background: url(https://cdn.pixabay.com/photo/2020/09/14/20/39/vans-5572117_960_720.png);
+    background-size: 55%;
+    background-position: 200px 30px;
+    background-repeat: no-repeat;
+}
+.block-fixed.payments {
+    background: url(https://cdn.pixabay.com/photo/2016/09/16/09/21/card-1673581_960_720.png);
+    background-size: 35%;
+    background-position: 300px 30px;
+    background-repeat: no-repeat;
 }
 .block-auto {
     border: solid 2px hsl(355deg 80% 60% / 46%);

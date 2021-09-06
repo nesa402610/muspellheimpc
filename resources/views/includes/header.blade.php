@@ -15,7 +15,7 @@
                     <a href="{{ route('accessories') }}">Периферия</a>
                 </div>
                 <div class="nav-item">
-                    <a href="{{ route('about') }}">Контакты</a>
+                    <a href="{{ route('contacts') }}">Контакты</a>
                 </div>
                 {{-- <div class="nav-item">
                     <a href="{{ route('sendEmail') }}">Контакты</a>

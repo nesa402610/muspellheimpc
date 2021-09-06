@@ -78,7 +78,7 @@ setTimeout(
 
 
 //Переключение между картинками
-$('.scroll-selector li').click(function (e) {
+$('.scroll-selector li').mouseenter(function (e) {
     e.preventDefault();
     let t = $(this), id = t.attr('data-id');
     if ($('.scroll-selector ul li a').hasClass('baka')) {

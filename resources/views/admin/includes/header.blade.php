@@ -2,6 +2,7 @@
     #header {
         display: flex;
     }
+
 </style>
 <header>
     <div id="size-cutter">
@@ -32,9 +33,23 @@
             </div>
             <div class="header_block">
                 <div class="nav-item">
-                    Поиск
-                    <input name="test.search" type="text">
+                    <form action="{{ route('admin.search') }}" method="POST">
+                        @csrf
+                        <input id="1707" name="search" type="text" placeholder="Поиск">
+                        <button style="display: none" type="submit"></button>
+                    </form>
+
                 </div>
+                <script>
+                    $("#1707").on('keyup', function(e) {
+                        if (e.key === 'Enter' || e.keyCode === 13) {
+                            $(this, 'button').submit(function (e) {
+                                e.preventDefault();
+
+                            });
+                        }
+                    });
+                </script>
                 @auth
                     @if (Auth::user()->isAdmin())
                         <div class="nav-item">
@@ -76,10 +91,12 @@
     </div>
 </header>
 <style>
-tr:nth-child(even) {
-    background: hsl(355deg 80% 40%);
-}
-tr:nth-child(odd) {
-    background: hsl(355deg 80% 60%);
-}
+    tr:nth-child(even) {
+        background: hsl(355deg 80% 40%);
+    }
+
+    tr:nth-child(odd) {
+        background: hsl(355deg 80% 60%);
+    }
+
 </style>

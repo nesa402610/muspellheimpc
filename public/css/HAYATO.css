@@ -38,13 +38,12 @@
 
 @media (min-width: 1722px) {
     #size-cutter {
-        width: 1720px;
+        width: 1500px;
         /* width: calc(100% - 2rem); */
     }
-    .inline_together > div {
+    .inline_together>div {
         width: 35%;
     }
-
 }
 
 @media (max-width: 1721px) and (min-width: 1440px) {
@@ -52,14 +51,12 @@
         width: 1400px;
         /* width: calc(100% - 2rem); */
     }
-    .inline_together > div {
+    .inline_together>div {
         width: 35%;
     }
     .grid_row {
         grid-template-columns: repeat(4, 1fr);
     }
-
-
 }
 
 @media (max-width: 1439px) and (min-width: 981px) {
@@ -67,11 +64,9 @@
         width: 1000px;
         width: calc(100% - 2rem);
     }
-
     .grid_row {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
 
 @media (max-width:980px) and (min-width: 720px) {
@@ -97,7 +92,6 @@
     #card {
         flex: 1 0 25%;
     }
-
     .filter-selector_row {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -112,10 +106,9 @@
         border-left: none;
         border-top: dashed 2px;
     }
-    #modular > div {
+    #modular>div {
         width: 60%;
     }
-
 }
 
 @media (max-width: 719px) and (min-width: 520px) {
@@ -153,10 +146,9 @@
         border-left: none;
         border-top: dashed 2px;
     }
-    #modular > div {
+    #modular>div {
         width: 60%;
     }
-
     .blockOfChoose {
         flex-wrap: wrap;
     }
@@ -164,6 +156,9 @@
         min-height: auto;
     }
     .infoblock .body .deliveryblock {
+        flex-wrap: wrap;
+    }
+    #product_preview {
         flex-wrap: wrap;
     }
 }
@@ -196,9 +191,6 @@
     .row {
         flex-wrap: wrap;
     }
-    .hardware_footer {
-        flex-direction: column;
-    }
     .filter-selector_row {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr 1fr;
@@ -206,7 +198,6 @@
     .grid_row {
         grid-template-columns: repeat(1, 1fr);
     }
-
     form#login .card {
         height: 25rem;
         width: auto;
@@ -217,16 +208,11 @@
     .banner_images {
         min-height: 240px;
     }
-
     .contentaside {
         grid-template-columns: auto;
     }
     aside {
-        position: absolute;
-        width: 100%;
-        z-index: 3333333333333333333333;
-        top: 0;
-        left: 0;
+        display: none;
     }
     .inline_together {
         flex-direction: column;
@@ -236,10 +222,12 @@
         border-left: none;
         border-top: dashed 2px;
     }
-    #modular > div {
+    #modular>div {
         width: 80%;
     }
-
+    #product_preview {
+        flex-wrap: wrap;
+    }
 }
 
 /* @media (max-width: 1720px) {

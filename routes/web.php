@@ -21,6 +21,7 @@ Route::get('/hardware', 'PageController@hardwarePaginator')->name('hardware');
 Route::get('/hardware/category-{category}', 'PageController@filter_hardwarePaginator')->name('hardware_filter');
 Route::get('/accessories', 'PageController@accessoriesPaginator')->name('accessories');
 Route::get('/about', 'PageController@about')->name('about');
+Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
 
 Route::get('sendEmail', 'PageController@sendEmail')->name('sendEmail');
@@ -51,6 +52,7 @@ Route::group([
     'middleware' => 'admincheck'
 
 ], function () {
+    Route::post('/search', 'PageController@search')->name('admin.search');
     Route::get('/all-images', 'PageController@TestPage')->name('admin.test');
     Route::post('/all-images/FileDelete/{image}', 'PageController@TestPageDelete')->name('admin.filedelite')->where('image', '[A-Za-z0-9]+.+[A-Za-z0-9]');
 
